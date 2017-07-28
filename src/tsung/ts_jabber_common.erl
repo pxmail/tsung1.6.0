@@ -316,9 +316,12 @@ connect(#jabber{domain=Domain, version = Version}) ->
     list_to_binary([
       "<?xml version='1.0'?><stream:stream  id='",
       ts_msg_server:get_id(list),
-      "' to='",
-      Domain,
-      "' xmlns='jabber:client' ",VersionStr,"xmlns:stream='http://etherx.jabber.org/streams'>"]).
+      "' xmlns='jabber:client' ",
+      "xmlns:stream='http://etherx.jabber.org/streams'>",
+      VersionStr,
+      "' to='",Domain,
+      "lang='zh-Hans-CN'",
+      "phone_uuid='78F70E68-33BB-43A7-ABF5-666666A98B0D'"]).
 
 %%----------------------------------------------------------------------
 %% Func: close/0
