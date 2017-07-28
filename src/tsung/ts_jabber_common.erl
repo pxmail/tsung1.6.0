@@ -319,8 +319,8 @@ connect(#jabber{domain=Domain, version = Version}) ->
       "' xmlns='jabber:client' ",
       "xmlns:stream='http://etherx.jabber.org/streams' ",
       VersionStr,
-      " to='",Domain,
-      " lang='zh-Hans-CN'",
+      "to='",Domain,
+      "' lang='zh-Hans-CN'",
       " phone_uuid='78F70E68-33BB-43A7-ABF5-666666A98B0D'>"]).
 
 %%----------------------------------------------------------------------
