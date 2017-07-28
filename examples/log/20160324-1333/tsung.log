@@ -1,0 +1,15 @@
+# stats: dump at 1458797621
+stats: users 0 1
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.859375 0 1.859375 1.859375 0 0
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0 0 0 0 0 0
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 19.34375 0 19.34375 19.34375 0 0
+stats: session 3 506.9349772135417 489.7000378675168 1199.465087890625 157.39501953125 0 0
+stats: users_count 3 3
+stats: finish_users_count 3 3
+stats: request 2 673.634521484375 523.607421875 1197.241943359375 150.027099609375 0 0
+stats: connect 2 582.4139404296875 511.5030517578125 1093.9169921875 70.910888671875 0 0
+stats: page 2 673.634521484375 523.607421875 1197.241943359375 150.027099609375 0 0
+stats: 200 2 2
+stats: size_rcv 646 646
+stats: size_sent 826 826
+stats: connected 0 0

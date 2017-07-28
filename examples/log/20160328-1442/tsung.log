@@ -1,0 +1,748 @@
+# stats: dump at 1459147367
+stats: users 800 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.76171875 0 1.76171875 1.76171875 0 0
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0 0 0 0 0 0
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 32.08984375 0 32.08984375 32.08984375 0 0
+stats: users_count 800 800
+stats: finish_users_count 0 0
+stats: connect 726 775.3872995087587 603.5973752359712 2434.763916015625 51.801025390625 0 0
+stats: size_sent 228542 228542
+stats: connected 726 726
+# stats: dump at 1459147377
+stats: users 800 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.640625 0.0 1.76171875 1.640625 1.76171875 1
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 1
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 19.33203125 0.0 32.08984375 19.33203125 32.08984375 1
+stats: users_count 0 800
+stats: finish_users_count 0 0
+stats: connect 74 1304.7825663798567 328.47773653339965 3303.947998046875 51.801025390625 775.3872995087587 726
+stats: size_sent 23266 251808
+stats: connected 74 800
+# stats: dump at 1459147387
+stats: users 800 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.69140625 0.0 1.76171875 1.640625 1.701171875 2
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 2
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 16.46875 0.0 32.08984375 16.46875 25.7109375 2
+stats: users_count 0 800
+stats: finish_users_count 0 0
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: size_sent 0 251808
+stats: connected 0 800
+# stats: dump at 1459147397
+stats: users 800 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.671875 0.0 1.76171875 1.640625 1.6979166666666667 3
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 3
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 23.921875 0.0 32.08984375 16.46875 22.630208333333332 3
+stats: users_count 0 800
+stats: finish_users_count 0 0
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: size_sent 0 251808
+stats: connected 0 800
+# stats: dump at 1459147407
+stats: users 800 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.55859375 0.0 1.76171875 1.55859375 1.69140625 4
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 4
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 19.3671875 0.0 32.08984375 16.46875 22.953125 4
+stats: users_count 0 800
+stats: finish_users_count 0 0
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: size_sent 0 251808
+stats: connected 0 800
+# stats: dump at 1459147417
+stats: users 800 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.76953125 0.0 1.76953125 1.55859375 1.66484375 5
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 5
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 19.8828125 0.0 32.08984375 16.46875 22.2359375 5
+stats: users_count 0 800
+stats: finish_users_count 0 0
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: size_sent 0 251808
+stats: connected 0 800
+# stats: dump at 1459147427
+stats: users 380 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.6484375 0.0 1.76953125 1.55859375 1.6822916666666667 6
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 6
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 39.64453125 0.0 39.64453125 16.46875 21.84375 6
+stats: session 420 63948.745531063985 1596.029698303477 66956.85595703125 60178.994140625 0 0
+stats: users_count 0 800
+stats: finish_users_count 420 420
+stats: request 413 63985.01003873146 1581.8605990949288 66954.46508789063 60177.26318359375 0 0
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 413 63985.01003873146 1581.8605990949288 66954.46508789063 60177.26318359375 0 0
+stats: 200 304 304
+stats: size_rcv 395637 395637
+stats: size_sent 0 251808
+stats: connected -413 387
+stats: 500 111 111
+# stats: dump at 1459147437
+stats: users 205 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.9296875 0.0 1.9296875 1.55859375 1.6774553571428572 7
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 7
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 15.8046875 0.0 39.64453125 15.8046875 24.38671875 7
+stats: session 175 64416.59726004464 2326.4349639670922 69964.26196289063 60178.994140625 63948.745531063985 420
+stats: users_count 0 800
+stats: finish_users_count 175 595
+stats: request 182 64309.60375708276 2340.9217583797117 69962.09204101563 60177.26318359375 63985.01003873146 413
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 182 64309.60375708276 2340.9217583797117 69962.09204101563 60177.26318359375 63985.01003873146 413
+stats: 200 103 407
+stats: size_rcv 243238 638875
+stats: size_sent 0 251808
+stats: connected -182 205
+stats: 500 78 189
+# stats: dump at 1459147447
+stats: users 204 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.7890625 0.0 1.9296875 1.55859375 1.708984375 8
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 8
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 32.10546875 0.0 39.64453125 15.8046875 23.31396484375 8
+stats: session 1 77756.5029296875 0.0 77756.5029296875 60178.994140625 64086.34898076418 595
+stats: users_count 0 800
+stats: finish_users_count 1 596
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: request 1 77754.52807617188 0.0 77754.52807617188 60177.26318359375 64084.29752905068 595
+stats: page 1 77754.52807617188 0.0 77754.52807617188 60177.26318359375 64084.29752905068 595
+stats: 200 0 407
+stats: size_rcv 321 639196
+stats: size_sent 0 251808
+stats: connected -1 204
+stats: 500 0 189
+# stats: dump at 1459147457
+stats: users 204 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.75 0.0 1.9296875 1.55859375 1.7178819444444444 9
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 9
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 52.0390625 0.0 52.0390625 15.8046875 24.29079861111111 9
+stats: session 0 0 0 77756.5029296875 60178.994140625 64109.28548067848 596
+stats: users_count 0 800
+stats: finish_users_count 0 596
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: request 0 0 0 77754.52807617188 60177.26318359375 64107.23415748545 596
+stats: page 0 0 0 77754.52807617188 60177.26318359375 64107.23415748545 596
+stats: 200 0 407
+stats: size_rcv 0 639196
+stats: size_sent 0 251808
+stats: connected 0 204
+stats: 500 0 189
+# stats: dump at 1459147467
+stats: users 204 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.859375 0.0 1.9296875 1.55859375 1.72109375 10
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 10
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 31.37890625 0.0 52.0390625 15.8046875 27.065625 10
+stats: session 0 0 0 77756.5029296875 60178.994140625 64109.28548067848 596
+stats: users_count 0 800
+stats: finish_users_count 0 596
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: request 0 0 0 77754.52807617188 60177.26318359375 64107.23415748545 596
+stats: page 0 0 0 77754.52807617188 60177.26318359375 64107.23415748545 596
+stats: 200 0 407
+stats: size_rcv 0 639196
+stats: size_sent 0 251808
+stats: connected 0 204
+stats: 500 0 189
+# stats: dump at 1459147477
+stats: users 204 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 2.37109375 0.0 2.37109375 1.55859375 1.7336647727272727 11
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 11
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 54.8984375 0.0 54.8984375 15.8046875 27.457741477272727 11
+stats: session 0 0 0 77756.5029296875 60178.994140625 64109.28548067848 596
+stats: users_count 0 800
+stats: finish_users_count 0 596
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: request 0 0 0 77754.52807617188 60177.26318359375 64107.23415748545 596
+stats: page 0 0 0 77754.52807617188 60177.26318359375 64107.23415748545 596
+stats: 200 0 407
+stats: size_rcv 0 639196
+stats: size_sent 0 251808
+stats: connected 0 204
+stats: 500 0 189
+# stats: dump at 1459147487
+stats: users 9 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 2.23046875 0.0 2.37109375 1.55859375 1.7867838541666667 12
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 12
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 39.875 0.0 54.8984375 15.8046875 29.744466145833332 12
+stats: session 195 121224.8148825621 426.00470096980223 122486.81103515625 60178.994140625 64109.28548067848 596
+stats: users_count 0 800
+stats: finish_users_count 195 791
+stats: request 195 121222.7953500601 425.98609472211496 122484.63598632813 60177.26318359375 64107.23415748545 596
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 195 121222.7953500601 425.98609472211496 122484.63598632813 60177.26318359375 64107.23415748545 596
+stats: 200 195 602
+stats: size_rcv 62595 701791
+stats: size_sent 0 251808
+stats: connected -195 9
+stats: 500 0 189
+# stats: dump at 1459147497
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 2.0390625 0.0 2.37109375 1.55859375 1.8209134615384615 13
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 13
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 40.1015625 0.0 54.8984375 15.8046875 30.52373798076923 13
+stats: session 8 123145.36154174805 1330.969352037551 125464.90209960938 60178.994140625 78189.59930288747 791
+stats: users_count 0 800
+stats: finish_users_count 8 799
+stats: request 8 123143.31930541992 1330.924673412083 125462.61499023438 60177.26318359375 78187.55581684329 791
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 8 123143.31930541992 1330.924673412083 125462.61499023438 60177.26318359375 78187.55581684329 791
+stats: 200 8 610
+stats: size_rcv 2568 704359
+stats: size_sent 0 251808
+stats: connected -8 1
+stats: 500 0 189
+# stats: dump at 1459147507
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.96875 0.0 2.37109375 1.55859375 1.8364955357142858 14
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 14
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 28.6953125 0.0 54.8984375 15.8046875 31.207868303571427 14
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147517
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.8984375 0.0 2.37109375 1.55859375 1.8453125 15
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 15
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 25.234375 0.0 54.8984375 15.8046875 31.040364583333332 15
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147527
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.76171875 0.0 2.37109375 1.55859375 1.8486328125 16
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 16
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 23.24609375 0.0 54.8984375 15.8046875 30.677490234375 16
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147537
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.71875 0.0 2.37109375 1.55859375 1.8435202205882353 17
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 17
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 17.7265625 0.0 54.8984375 15.8046875 30.240349264705884 17
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147547
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.609375 0.0 2.37109375 1.55859375 1.8365885416666667 18
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 18
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 19.98828125 0.0 54.8984375 15.8046875 29.54513888888889 18
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147557
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.44140625 0.0 2.37109375 1.44140625 1.8246299342105263 19
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 19
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 17.9296875 0.0 54.8984375 15.8046875 29.04214638157895 19
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147567
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.921875 0.0 2.37109375 1.44140625 1.80546875 20
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 20
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 22.7109375 0.0 54.8984375 15.8046875 28.4865234375 20
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147577
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.94140625 0.0 2.37109375 1.44140625 1.8110119047619047 21
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 21
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 23.953125 0.0 54.8984375 15.8046875 28.211495535714285 21
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147587
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.7890625 0.0 2.37109375 1.44140625 1.8169389204545454 22
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 22
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 27.6796875 0.0 54.8984375 15.8046875 28.017933238636363 22
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147597
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.73828125 0.0 2.37109375 1.44140625 1.815726902173913 23
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 23
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 27.02734375 0.0 54.8984375 15.8046875 28.003226902173914 23
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147607
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.62109375 0.0 2.37109375 1.44140625 1.8125 24
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 24
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 26.0 0.0 54.8984375 15.8046875 27.962565104166668 24
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147617
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.609375 0.0 2.37109375 1.44140625 1.80484375 25
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 25
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 24.609375 0.0 54.8984375 15.8046875 27.8840625 25
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147627
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.671875 0.0 2.37109375 1.44140625 1.7973257211538463 26
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 26
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 20.19140625 0.0 54.8984375 15.8046875 27.75811298076923 26
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147637
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.55859375 0.0 2.37109375 1.44140625 1.7926793981481481 27
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 27
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 46.40625 0.0 54.8984375 15.8046875 27.477864583333332 27
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147647
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.55078125 0.0 2.37109375 1.44140625 1.7843191964285714 28
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 28
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 47.203125 0.0 54.8984375 15.8046875 28.153878348214285 28
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147657
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.4609375 0.0 2.37109375 1.44140625 1.7762661637931034 29
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 29
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 44.69921875 0.0 54.8984375 15.8046875 28.810748922413794 29
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147667
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.390625 0.0 2.37109375 1.390625 1.7657552083333334 30
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 30
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 19.5390625 0.0 54.8984375 15.8046875 29.340364583333333 30
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147677
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.41015625 0.0 2.37109375 1.390625 1.7536542338709677 31
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 31
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 21.125 0.0 54.8984375 15.8046875 29.024193548387096 31
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147687
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.3515625 0.0 2.37109375 1.3515625 1.742919921875 32
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 32
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 24.9765625 0.0 54.8984375 15.8046875 28.77734375 32
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147697
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.3984375 0.0 2.37109375 1.3515625 1.731060606060606 33
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 33
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 20.83984375 0.0 54.8984375 15.8046875 28.662168560606062 33
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147707
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.33984375 0.0 2.37109375 1.33984375 1.7212775735294117 34
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 34
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 31.80859375 0.0 54.8984375 15.8046875 28.43210018382353 34
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147717
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.37109375 0.0 2.37109375 1.33984375 1.7103794642857142 35
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 35
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 30.16796875 0.0 54.8984375 15.8046875 28.52857142857143 35
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147727
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.4609375 0.0 2.37109375 1.33984375 1.7009548611111112 36
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 36
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 21.9921875 0.0 54.8984375 15.8046875 28.574110243055557 36
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147737
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.46875 0.0 2.37109375 1.33984375 1.6944679054054055 37
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 37
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 20.61328125 0.0 54.8984375 15.8046875 28.39622043918919 37
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147747
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.55859375 0.0 2.37109375 1.33984375 1.6885279605263157 38
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 38
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 19.8828125 0.0 54.8984375 15.8046875 28.19140625 38
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147757
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.46875 0.0 2.37109375 1.33984375 1.685196314102564 39
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 39
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 34.62890625 0.0 54.8984375 15.8046875 27.978365384615383 39
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147767
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.3984375 0.0 2.37109375 1.33984375 1.67978515625 40
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 40
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 19.5234375 0.0 54.8984375 15.8046875 28.14462890625 40
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147777
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.48828125 0.0 2.37109375 1.33984375 1.6729230182926829 41
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 41
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 18.0234375 0.0 54.8984375 15.8046875 27.93435594512195 41
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147787
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.48828125 0.0 2.37109375 1.33984375 1.6685267857142858 42
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 42
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 26.39453125 0.0 54.8984375 15.8046875 27.698381696428573 42
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147797
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.5703125 0.0 2.37109375 1.33984375 1.6643350290697674 43
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 43
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 27.95703125 0.0 54.8984375 15.8046875 27.668059593023255 43
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147807
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.48046875 0.0 2.37109375 1.33984375 1.6621981534090908 44
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 44
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 27.703125 0.0 54.8984375 15.8046875 27.674627130681817 44
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147817
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.48046875 0.0 2.37109375 1.33984375 1.6581597222222222 45
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 45
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 28.98828125 0.0 54.8984375 15.8046875 27.675260416666667 45
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147827
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.328125 0.0 2.37109375 1.328125 1.654296875 46
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 46
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 27.484375 0.0 54.8984375 15.8046875 27.703804347826086 46
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: 200 0 610
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147837
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.51171875 0.0 2.37109375 1.328125 1.6473570478723405 47
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 47
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 26.234375 0.0 54.8984375 15.8046875 27.69913563829787 47
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189
+# stats: dump at 1459147847
+stats: users 1 800
+stats: {load,"tsung_controller@daviddeMacBook-Pro"} 1 1.4296875 0.0 2.37109375 1.328125 1.64453125 48
+stats: {cpu,"tsung_controller@daviddeMacBook-Pro"} 1 0.0 0.0 0 0 0.0 48
+stats: {freemem,"tsung_controller@daviddeMacBook-Pro"} 1 27.75390625 0.0 54.8984375 15.8046875 27.668619791666668 48
+stats: session 0 0 0 125464.90209960938 60178.994140625 78639.71957561698 799
+stats: users_count 0 800
+stats: finish_users_count 0 799
+stats: request 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: connect 0 0 0 3303.947998046875 51.801025390625 824.3563616943352 800
+stats: page 0 0 0 125462.61499023438 60177.26318359375 78637.6761020856 799
+stats: 200 0 610
+stats: size_rcv 0 704359
+stats: size_sent 0 251808
+stats: connected 0 1
+stats: 500 0 189

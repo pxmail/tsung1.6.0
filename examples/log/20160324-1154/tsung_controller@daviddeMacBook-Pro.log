@@ -1,0 +1,40 @@
+
+=INFO REPORT==== 24-Mar-2016::11:54:59 ===
+    ts_config_server:(5:<0.71.0>) Config server started, logdir is "/Users/admin/Job/jshy/tsung/tsung-1.6.0/examples/log/20160324-1154"
+ 
+=INFO REPORT==== 24-Mar-2016::11:54:59 ===
+              ts_mon:(5:<0.52.0>) starting monitor, global 
+
+=INFO REPORT==== 24-Mar-2016::11:54:59 ===
+           ts_config:(5:<0.71.0>) Reading config file: http_simple2.xml
+
+=INFO REPORT==== 24-Mar-2016::11:54:59 ===
+    ts_config_server:(0:<0.71.0>) Error while parsing XML config file: {fatal,
+                                                                        {{error,
+                                                                          {error_missing_element_declaration_in_DTD,
+                                                                           http_headername}},
+                                                                         {file,
+                                                                          "http_simple2.xml"},
+                                                                         {line,
+                                                                          51},
+                                                                         {col,
+                                                                          10}}}
+
+=ERROR REPORT==== 24-Mar-2016::11:54:59 ===
+** Generic server ts_config_server terminating 
+** Last message in was {get_monitor_hosts}
+** When Server state == {state,undefined,
+                               "/Users/admin/Job/jshy/tsung/tsung-1.6.0/examples/log/20160324-1154",
+                               0,0,0,undefined,1,undefined,
+                               'daviddeMacBook-Pro',0,0,undefined,undefined}
+** Reason for termination == 
+** {{badrecord,config},
+    [{ts_config_server,handle_call,3,
+                       [{file,"src/tsung_controller/ts_config_server.erl"},
+                        {line,335}]},
+     {gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,585}]},
+     {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,239}]}]}
+
+=INFO REPORT==== 24-Mar-2016::11:54:59 ===
+    ts_config_server:(5:<0.90.0>) Config server started, logdir is "/Users/admin/Job/jshy/tsung/tsung-1.6.0/examples/log/20160324-1154"
+ 

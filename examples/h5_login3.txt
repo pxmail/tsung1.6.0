@@ -1,0 +1,2 @@
+paracode=ts10001&wechat_id=00002&sex=1;
+paracode=ts10001&wechat_id=00001&sex=1;
