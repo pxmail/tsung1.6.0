@@ -513,6 +513,7 @@ message(Dest, #jabber{data=Data}, Service) when is_list(Data) ->
 %%   <sub_body>消息补充内容(目前只有阅后即焚的时间)</sub_body>
 %% </msg>
 message2(Dest, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
+    ?LOGF("chat2 101 Dest=~p~n",[Dest],?NOTICE),
     Stamp = generate_stamp(Stamped),
     PadLen = Size - length(Stamp),
     Data = case PadLen > 0 of
@@ -520,15 +521,15 @@ message2(Dest, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
                false -> ""
            end,
     StampAndData = Stamp ++ Data,
-    ?DebugF("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
+    ?LOGF("chat2 102 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
     %%?Debug("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
     put(previous, Dest),
     list_to_binary([
                     "<msg cmid='",ts_msg_server:get_id(list), "'",
-                    "retry='0'", " to='", Dest, "@", Service, "'",
+                    " retry='0'", " to='", Dest, "@", Service, "'",
                     " chat_type='chat'",
                     " msg_type='chat'",
-                    " <body>",StampAndData, "</body></msg>"]).
+                    " <body>", StampAndData, "</body></msg>"]).
 
 generate_stamp(false) ->
     "";
