@@ -521,7 +521,7 @@ message2(Dest, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
                false -> ""
            end,
     StampAndData = Stamp ++ Data,
-    ?LOGF("chat2 102 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
+    ?LOGF("chat2 102 Data-~p,StampAndData=~p~n", [Data, StampAndData],?NOTICE),
     %%?Debug("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
     put(previous, Dest),
     list_to_binary([
