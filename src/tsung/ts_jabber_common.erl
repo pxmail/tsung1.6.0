@@ -143,6 +143,7 @@ get_message(Jabber=#jabber{type = 'chat', id=_Id, dest = Dest, domain=Domain}) -
     message(Dest, Jabber, Domain);
 
 get_message(Jabber=#jabber{type = 'singlechat', room = ToUsername, domain=Domain}) ->
+    ?LOGF("chat2 100 ToUsername=~p~n",[ToUsername],?ERR),
     singlechat(ToUsername, Jabber, Domain);
 get_message(#jabber{type = 'iq:roster:add', id=Id, dest = online, username=User,passwd=Pwd,
                     domain=Domain, group=Group,user_server=UserServer, prefix=Prefix}) ->
@@ -279,6 +280,7 @@ get_message(#jabber{type = 'privacy:set_active', username = Name, domain = Domai
     privacy_set_active(Name, Domain);
 
 get_message(Jabber) ->
+    ?LOGF("chat2 300 ~n",[],?ERR),
     get_message2(Jabber).
 
 
@@ -521,7 +523,7 @@ muc_chat2(Room, Service, Size) ->
     Result.
 
 singlechat(ToUsername, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
-    ?LOGF("chat2 101 ToUsername=~p~n",[ToUsername],?NOTICE),
+    ?LOGF("chat2 101 ToUsername=~p~n",[ToUsername],?ERR),
     Stamp = generate_stamp(Stamped),
     PadLen = Size - length(Stamp),
     Data = case PadLen > 0 of
@@ -529,7 +531,7 @@ singlechat(ToUsername, #jabber{size=Size,data=undefined,stamped=Stamped}, Servic
                false -> ""
            end,
     StampAndData = Stamp ++ Data,
-    ?LOGF("chat2 102 Data-~p,StampAndData=~p~n", [Data, StampAndData],?NOTICE),
+    ?LOGF("chat2 102 Data-~p,StampAndData=~p~n", [Data, StampAndData],?ERR),
     %%?Debug("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
     put(previous, ToUsername),
     list_to_binary([
