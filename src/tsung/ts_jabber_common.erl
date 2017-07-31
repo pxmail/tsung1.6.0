@@ -141,6 +141,8 @@ get_message(_Jabber=#jabber{type = 'chat', id=_Id, dest = undefined, domain=_Dom
 get_message(Jabber=#jabber{type = 'chat', id=_Id, dest = Dest, domain=Domain}) ->
     ?DebugF("~w -> ~w ~n", [_Id,  Dest]),
     message(Dest, Jabber, Domain);
+get_message(Jabber=#jabber{type = 'chat2', id=_Id, dest = Dest, domain=Domain}) ->
+    message2(Dest, Jabber, Domain);
 get_message(#jabber{type = 'iq:roster:add', id=Id, dest = online, username=User,passwd=Pwd,
                     domain=Domain, group=Group,user_server=UserServer, prefix=Prefix}) ->
     case ts_user_server:get_online(UserServer,set_id(Id,User,Pwd)) of
@@ -503,6 +505,21 @@ message(Dest, #jabber{data=Data}, Service) when is_list(Data) ->
                     "<message id='",ts_msg_server:get_id(list), "' to='",
                     Dest, "@", Service,
                     "' type='chat'><body>",Data, "</body></message>"]).
+
+%% <msg cmid="708baa9d-65d0-44f8-9e8c-b3ed7c0e31e8" retry="0" to="238203" chat_type="chat">
+%%   <msg_type>消息类型：chat、bingo等</msg_type>
+%%   <body>消息内容</body>
+%%   <sub_msg_type>消息补充类型：防截屏|阅后即焚</sub_msg_type>
+%%   <sub_body>消息补充内容(目前只有阅后即焚的时间)</sub_body>
+%% </msg>
+message2(Dest, #jabber{data=Data}, Service) when is_list(Data) ->
+    put(previous, Dest),
+    list_to_binary([
+                    "<msg cmid='",ts_msg_server:get_id(list), "'",
+                    "retry='0'", " to='", Dest, "@", Service, "'",
+                    " chat_type='chat'",
+                    " msg_type='chat'"
+                    " <body>",Data, "</body></msg>"]).
 
 generate_stamp(false) ->
     "";
