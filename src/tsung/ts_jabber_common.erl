@@ -319,7 +319,7 @@ connect(#jabber{domain=Domain, version = Version}) ->
                          "version='" ++ Version ++"' "
                  end,
     list_to_binary([
-      "<?xml version='1.0'?><stream:stream  id='",
+      "<?xml version='1.0'?>\r\n<stream:stream  id='",
       ts_msg_server:get_id(list),
       "' xmlns='jabber:client' ",
       "xmlns:stream='http://etherx.jabber.org/streams' ",
