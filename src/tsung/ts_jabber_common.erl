@@ -512,7 +512,7 @@ message(Dest, #jabber{data=Data}, Service) when is_list(Data) ->
 %%   <sub_msg_type>消息补充类型：防截屏|阅后即焚</sub_msg_type>
 %%   <sub_body>消息补充内容(目前只有阅后即焚的时间)</sub_body>
 %% </msg>
-message2(Dest, #jabber{data=Data}, Service) when is_list(Data) ->
+message2(Dest, #jabber{data=Data}, Service) ->
     put(previous, Dest),
     list_to_binary([
                     "<msg cmid='",ts_msg_server:get_id(list), "'",
