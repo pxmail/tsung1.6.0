@@ -141,8 +141,9 @@ get_message(_Jabber=#jabber{type = 'chat', id=_Id, dest = undefined, domain=_Dom
 get_message(Jabber=#jabber{type = 'chat', id=_Id, dest = Dest, domain=Domain}) ->
     ?DebugF("~w -> ~w ~n", [_Id,  Dest]),
     message(Dest, Jabber, Domain);
-get_message(Jabber=#jabber{type = 'chat2', id=_Id, dest = Dest, domain=Domain}) ->
-    message2(Dest, Jabber, Domain);
+
+get_message(Jabber=#jabber{type = 'singlechat', room = ToUsername, domain=Domain}) ->
+    singlechat(ToUsername, Jabber, Domain);
 get_message(#jabber{type = 'iq:roster:add', id=Id, dest = online, username=User,passwd=Pwd,
                     domain=Domain, group=Group,user_server=UserServer, prefix=Prefix}) ->
     case ts_user_server:get_online(UserServer,set_id(Id,User,Pwd)) of
@@ -512,8 +513,15 @@ message(Dest, #jabber{data=Data}, Service) when is_list(Data) ->
 %%   <sub_msg_type>消息补充类型：防截屏|阅后即焚</sub_msg_type>
 %%   <sub_body>消息补充内容(目前只有阅后即焚的时间)</sub_body>
 %% </msg>
-message2(Dest, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
-    ?LOGF("chat2 101 Dest=~p~n",[Dest],?NOTICE),
+
+muc_chat2(Room, Service, Size) ->
+    Result = list_to_binary(["<message type='groupchat' to ='", Room,"@", Service,"'>",
+                                "<body>", ts_utils:urandomstr_noflat(Size), "</body>",
+                                "</message>"]),
+    Result.
+
+singlechat(ToUsername, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
+    ?LOGF("chat2 101 ToUsername=~p~n",[ToUsername],?NOTICE),
     Stamp = generate_stamp(Stamped),
     PadLen = Size - length(Stamp),
     Data = case PadLen > 0 of
@@ -526,7 +534,7 @@ message2(Dest, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
     put(previous, Dest),
     list_to_binary([
                     "<msg cmid='",ts_msg_server:get_id(list), "'",
-                    " retry='0'", " to='", Dest, "@", Service, "'",
+                    " retry='0'", " to='", ToUsername, "@", Service, "'",
                     " chat_type='chat'",
                     " msg_type='chat'",
                     " <body>", StampAndData, "</body></msg>"]).
