@@ -518,7 +518,7 @@ message2(Dest, #jabber{data=Data}, Service) when is_list(Data) ->
                     "<msg cmid='",ts_msg_server:get_id(list), "'",
                     "retry='0'", " to='", Dest, "@", Service, "'",
                     " chat_type='chat'",
-                    " msg_type='chat'"
+                    " msg_type='chat'",
                     " <body>",Data, "</body></msg>"]).
 
 generate_stamp(false) ->
