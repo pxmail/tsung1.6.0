@@ -521,7 +521,7 @@ message2(Dest, #jabber{size=Size,data=Data,data=undefined,stamped=Stamped}, Serv
            end,
     StampAndData = Stamp ++ Data,
     ?DebugF("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
-    ?Debug("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
+    %%?Debug("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
     put(previous, Dest),
     list_to_binary([
                     "<msg cmid='",ts_msg_server:get_id(list), "'",
