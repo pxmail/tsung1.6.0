@@ -531,7 +531,7 @@ singlechat(ToUsername, #jabber{size=Size,data=undefined,stamped=Stamped}, Servic
     StampAndData = Stamp ++ Data,
     ?LOGF("chat2 102 Data-~p,StampAndData=~p~n", [Data, StampAndData],?NOTICE),
     %%?Debug("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
-    put(previous, Dest),
+    put(previous, ToUsername),
     list_to_binary([
                     "<msg cmid='",ts_msg_server:get_id(list), "'",
                     " retry='0'", " to='", ToUsername, "@", Service, "'",
