@@ -522,6 +522,13 @@ muc_chat2(Room, Service, Size) ->
                                 "</message>"]),
     Result.
 
+
+%% <msg cmid="708baa9d-65d0-44f8-9e8c-b3ed7c0e31e8" retry="0" to="238203" chat_type="chat">
+%%   <msg_type>消息类型：chat、bingo等</msg_type>
+%%   <body>消息内容</body>
+%%   <sub_msg_type>消息补充类型：防截屏|阅后即焚</sub_msg_type>
+%%   <sub_body>消息补充内容(目前只有阅后即焚的时间)</sub_body>
+%% </msg>
 singlechat(ToUsername, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
     ?LOGF("chat2 101 ToUsername=~p~n",[ToUsername],?ERR),
     Stamp = generate_stamp(Stamped),
@@ -536,10 +543,11 @@ singlechat(ToUsername, #jabber{size=Size,data=undefined,stamped=Stamped}, Servic
     put(previous, ToUsername),
     list_to_binary([
                     "<msg cmid='",ts_msg_server:get_id(list), "'",
-                    " retry='0'", " to='", ToUsername, "@", Service, "'",
-                    " chat_type='chat'",
-                    " msg_type='chat'",
-                    " <body>", StampAndData, "</body></msg>"]).
+                    " retry='0'", " to='", ToUsername, "'",
+                    %%"@", Service, "'",
+                    " chat_type='chat'>",
+                    "<msg_type>chat</msg_type>",
+                    "<body>", StampAndData, "</body></msg>"]).
 
 generate_stamp(false) ->
     "";
