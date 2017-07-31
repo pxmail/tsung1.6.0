@@ -512,14 +512,23 @@ message(Dest, #jabber{data=Data}, Service) when is_list(Data) ->
 %%   <sub_msg_type>消息补充类型：防截屏|阅后即焚</sub_msg_type>
 %%   <sub_body>消息补充内容(目前只有阅后即焚的时间)</sub_body>
 %% </msg>
-message2(Dest, #jabber{data=Data}, Service) ->
+message2(Dest, #jabber{size=Size,data=Data,data=undefined,stamped=Stamped}, Service) ->
+    Stamp = generate_stamp(Stamped),
+    PadLen = Size - length(Stamp),
+    Data = case PadLen > 0 of
+               true -> ts_utils:urandomstr_noflat(PadLen);
+               false -> ""
+           end,
+    StampAndData = Stamp ++ Data,
+    ?DebugF("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
+    ?Debug("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
     put(previous, Dest),
     list_to_binary([
                     "<msg cmid='",ts_msg_server:get_id(list), "'",
                     "retry='0'", " to='", Dest, "@", Service, "'",
                     " chat_type='chat'",
                     " msg_type='chat'",
-                    " <body>",Data, "</body></msg>"]).
+                    " <body>",StampAndData, "</body></msg>"]).
 
 generate_stamp(false) ->
     "";
