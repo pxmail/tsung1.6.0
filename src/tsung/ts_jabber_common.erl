@@ -512,7 +512,7 @@ message(Dest, #jabber{data=Data}, Service) when is_list(Data) ->
 %%   <sub_msg_type>消息补充类型：防截屏|阅后即焚</sub_msg_type>
 %%   <sub_body>消息补充内容(目前只有阅后即焚的时间)</sub_body>
 %% </msg>
-message2(Dest, #jabber{size=Size,data=Data,data=undefined,stamped=Stamped}, Service) ->
+message2(Dest, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
     Stamp = generate_stamp(Stamped),
     PadLen = Size - length(Stamp),
     Data = case PadLen > 0 of
