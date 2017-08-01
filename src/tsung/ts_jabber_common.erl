@@ -142,9 +142,9 @@ get_message(Jabber=#jabber{type = 'chat', id=_Id, dest = Dest, domain=Domain}) -
     ?DebugF("~w -> ~w ~n", [_Id,  Dest]),
     message(Dest, Jabber, Domain);
 
-get_message(Jabber=#jabber{type = 'singlechat', room = ToUsername, domain=Domain}) ->
+get_message(Jabber=#jabber{type = 'im20:singlechat', room = ToUsername, domain=Domain}) ->
     ?LOGF("chat2 100 ToUsername=~p~n",[ToUsername],?ERR),
-    singlechat(ToUsername, Jabber, Domain);
+    im20_singlechat(ToUsername, Jabber, Domain);
 get_message(#jabber{type = 'iq:roster:add', id=Id, dest = online, username=User,passwd=Pwd,
                     domain=Domain, group=Group,user_server=UserServer, prefix=Prefix}) ->
     case ts_user_server:get_online(UserServer,set_id(Id,User,Pwd)) of
@@ -269,6 +269,10 @@ get_message(#jabber{type = 'muc:nick', room = Room, muc_service = Service, nick 
     muc_nick(Room, Nick, Service);
 get_message(#jabber{type = 'muc:exit', room = Room, muc_service = Service, nick = Nick}) ->
     muc_exit(Room, Nick, Service);
+
+%%im2.0群聊
+get_message(#jabber{type = 'im20:groupchat', room = Room, muc_service = Service, size = Size}) ->
+    im20_groupchat(Room, Service, Size);
 
 get_message(Jabber=#jabber{id=user_defined}) ->
     get_message2(Jabber);
@@ -529,7 +533,7 @@ muc_chat2(Room, Service, Size) ->
 %%   <sub_msg_type>消息补充类型：防截屏|阅后即焚</sub_msg_type>
 %%   <sub_body>消息补充内容(目前只有阅后即焚的时间)</sub_body>
 %% </msg>
-singlechat(ToUsername, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
+im20_singlechat(ToUsername, #jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
     ?LOGF("chat2 101 ToUsername=~p~n",[ToUsername],?ERR),
     Stamp = generate_stamp(Stamped),
     PadLen = Size - length(Stamp),
@@ -775,6 +779,24 @@ muc_exit(Room,Nick, Service) ->
     Result = list_to_binary(["<presence to='", Room,"@", Service,"/", Nick, "' type='unavailable'/>"]),
     Result.
 
+%% <msg cmid="708baa9d-65d0-44f8-9e8c-b3ed7c0e31e8" retry="0" to="群ID" chat_type="groupchat">
+%%   <msg_type>消息类型：chat、bingo等</msg_type>
+%%   <body>消息内容</body>
+%%   <sub_msg_type>消息补充类型：防截屏|阅后即焚</sub_msg_type>
+%%   <sub_body>消息补充内容(目前只有阅后即焚的时间)</sub_body>
+%%   <at_who>121221,3432</at_who>
+%%  <circle_id>群ID </circle_id>
+%% </msg>
+im20_groupchat(Room, Service, Size) ->
+    Result = list_to_binary([
+                             "<msg cmid='", ts_msg_server:get_id(list), "'",
+                             " retry='0'", " to='", Room, "'",
+                             " chat_type='groupchat'>",
+                             "<msg_type>chat</msg_type>",
+                             "<body>", ts_utils:urandomstr_noflat(Size), "</body>",
+                             "<circle_id>", Room, "</circle_id>",
+                             "</msg>"]),
+	Result.
 
 %%%----------------------------------------------------------------------
 %%% Func: privacy_get_names/2
