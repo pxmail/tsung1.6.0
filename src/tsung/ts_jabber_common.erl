@@ -789,7 +789,7 @@ muc_exit(Room,Nick, Service) ->
 %% </msg>
 im20_groupchat(Room, Service, Size) ->
     Result = list_to_binary([
-                             "<msg cmid='", ts_msg_server:get_id(list), "'",
+                             "<msg cmid='", uuid:v4(), ts_msg_server:get_id(list), "'",
                              " retry='0'", " to='", Room, "'",
                              " chat_type='groupchat'>",
                              "<msg_type>chat</msg_type>",
