@@ -788,14 +788,15 @@ muc_exit(Room,Nick, Service) ->
 %%  <circle_id>群ID </circle_id>
 %% </msg>
 im20_groupchat(Room, Service, Size) ->
+    CMID = ts_msg_server:get_id(list), "__",uuid:random_str(),
     Result = list_to_binary([
-                             "<msg cmid='", ts_msg_server:get_id(list), "_",uuid:random_str(), "'",
-
+                             "<msg cmid='", CMID, "'",
 %%ts_msg_server:get_id(list), "'",
                              " retry='0'", " to='", Room, "'",
                              " chat_type='groupchat'>",
                              "<msg_type>chat</msg_type>",
-                             "<body>", ts_utils:urandomstr_noflat(Size), "</body>",
+                             "<body>", CMID, "</body>",
+%%                           "<body>", ts_utils:urandomstr_noflat(Size), "</body>",
                              "<circle_id>", Room, "</circle_id>",
                              "</msg>"]),
 	Result.
