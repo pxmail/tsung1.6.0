@@ -322,6 +322,9 @@ subst2(Req=#jabber{type = Type}, Dynvars) when Type == 'pubsub:unsubscribe' ->
     NewNode=ts_search:subst(Req#jabber.node,Dynvars),
     NewSubId=ts_search:subst(Req#jabber.subid,Dynvars),
     Req#jabber{node=NewNode,subid=NewSubId};
+subst2(Req=#jabber{type = Type}, Dynvars) when Type == 'im20:groupchat' ->
+    Req#jabber{nick = ts_search:subst(Req#jabber.nick, Dynvars),
+               room = ts_search:subst(Req#jabber.room, Dynvars)};
 subst2(Req, _Dynvars) ->
     Req.
 
