@@ -789,7 +789,7 @@ muc_exit(Room,Nick, Service) ->
 %% </msg>
 im20_groupchat(Room, Service, Size) ->
     CMIDStr = lists:append([ts_msg_server:get_id(list), "__",uuid:random_str()]),
-    ?LOGF("groupchat CMIDStr=~p~n", [CMIDStr], ?ERR),
+    ?LOGF("groupchat CMIDStr=~p,Room=~p~n", [CMIDStr,Room], ?ERR),
     Result = list_to_binary([
                              "<msg cmid='", CMIDStr, "'",
 %%ts_msg_server:get_id(list), "'",
