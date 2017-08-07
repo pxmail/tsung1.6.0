@@ -767,6 +767,7 @@ muc_join(Room,Nick, Service) ->
     Result.
 
 muc_chat(Room, Service, Size) ->
+    ?LOGF("111111  muc_chat Room=~p~n", [Room], ?ERR),
     Result = list_to_binary(["<message type='groupchat' to ='", Room,"@", Service,"'>",
                                 "<body>", ts_utils:urandomstr_noflat(Size), "</body>",
                                 "</message>"]),
