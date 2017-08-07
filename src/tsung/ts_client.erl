@@ -297,6 +297,7 @@ handle_info2({gen_ts_transport, Socket, Data}, think,State=#state_rcv{
     ts_mon:add({ sum, size_rcv, size(Data)}),
     Proto = State#state_rcv.protocol,
     ?LOG("Data received from socket (bidi) in state think~n",?INFO),
+    ?LOGF("Data1 was ~p~n",[Data],?NOTICE),
     {NextAction, NewState} = case Type:parse_bidi(Data, State) of
                    {nodata, State2, Action} ->
                        ?LOG("Bidi: no data ~n",?DEB),
@@ -324,14 +325,15 @@ handle_info2({gen_ts_transport, Socket, Data}, think, State = #state_rcv{request
     ?LOGF("Data receive from socket in state think, ack=~p, skip~n",
           [Req#ts_request.ack],?NOTICE),
     ?DebugF("Data was ~p~n",[Data]),
-    ?LOGF("Data was ~p~n",[Data],?NOTICE),
+    ?LOGF("Data2 was ~p~n",[Data],?NOTICE),
     NewSocket = (State#state_rcv.protocol):set_opts(Socket, [{active, once}]),
     {next_state, think, State#state_rcv{socket=NewSocket}};
 handle_info2({gen_ts_transport, _Socket, Data}, think, State) ->
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ count, error_unknown_data }),
     ?LOG("Data receive from socket in state think, stop~n", ?ERR),
-    ?DebugF("Data was ~p~n",[Data]),
+    ?DebugF("Data2 was ~p~n",[Data]),
+    ?LOGF("Data3 was ~p~n",[Data],?NOTICE),
     {stop, normal, State};
 %% pablo TODO:  when this could happen??
 handle_info2({inet_reply, _Socket,ok}, StateName, State ) ->
