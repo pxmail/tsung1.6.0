@@ -90,6 +90,7 @@ get_user_agent()->
 %%          {stop, Reason}
 %%--------------------------------------------------------------------
 init([]) ->
+    ets:new(message, [named_table, set, public]),
     Table = ets:new(sessiontable, [set, private]),
     {ok, #state{table=Table}}.
 
