@@ -542,7 +542,7 @@ im20_singlechat(ToUsername, #jabber{size=Size,data=undefined,stamped=Stamped}, S
                false -> ""
            end,
     StampAndData = Stamp ++ Data,
-    ?LOGF("chat2 102 Data-~p,StampAndData=~p~n", [Data, StampAndData],?ERR),
+    ?LOGF("chat2 102 Data-~p,StampAndData=~p~n", [Data, StampAndData],?NOTICE),
     %%?Debug("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
     put(previous, ToUsername),
     list_to_binary([
@@ -790,7 +790,7 @@ muc_exit(Room,Nick, Service) ->
 %% </msg>
 im20_groupchat(Room, Service, Size) ->
     CMIDStr = lists:append([ts_msg_server:get_id(list), "__",uuid:random_str()]),
-    ?LOGF("groupchat CMIDStr=~p,Room=~p~n", [CMIDStr,Room], ?ERR),
+    ?LOGF("groupchat CMIDStr=~p,Room=~p~n", [CMIDStr,Room], ?NOTICE),
     Result = list_to_binary([
                              "<msg cmid='", CMIDStr, "'",
 %%ts_msg_server:get_id(list), "'",
