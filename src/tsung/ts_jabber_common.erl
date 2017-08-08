@@ -78,7 +78,9 @@ get_message(Jabber=#jabber{type = 'presence:directed', id=Id,username=User,passw
             ts_mon:add({ count, error_no_online }),
             << >>
     end;
-
+get_message(Jabber=#jabber{type = 'im20:ping', domain = Domain}) ->
+    ?LOGF("ping Domain=~n",[Domain],?NOTICE),
+    im20_ping(Jabber, Domain);
 
 
 get_message(Jabber=#jabber{dest=previous}) ->
@@ -143,7 +145,7 @@ get_message(Jabber=#jabber{type = 'chat', id=_Id, dest = Dest, domain=Domain}) -
     message(Dest, Jabber, Domain);
 
 get_message(Jabber=#jabber{type = 'im20:singlechat', room = ToUsername, domain=Domain}) ->
-    ?LOGF("chat2 100 ToUsername=~p~n",[ToUsername],?ERR),
+    ?LOGF("chat2 100 ToUsername=~p~n",[ToUsername],?NOTICE),
     im20_singlechat(ToUsername, Jabber, Domain);
 get_message(#jabber{type = 'iq:roster:add', id=Id, dest = online, username=User,passwd=Pwd,
                     domain=Domain, group=Group,user_server=UserServer, prefix=Prefix}) ->
@@ -526,6 +528,13 @@ muc_chat2(Room, Service, Size) ->
                                 "</message>"]),
     Result.
 
+%% <iq type="get" id="6D6E86C5-CBAE-4C8B-9CF6-6154DCD792B5"><ping xmlns="urn:xmpp:ping"/></iq>
+im20_ping#jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
+    Result = list_to_binary([
+                             "<iq type=\"get\" ", "id=\"", uuid:random_str(), "\">",
+                             "<ping xmlns=\"urn:xmpp:ping\"/></iq>"]),
+	Result.
+
 
 %% <msg cmid="708baa9d-65d0-44f8-9e8c-b3ed7c0e31e8" retry="0" to="238203" chat_type="chat">
 %%   <msg_type>消息类型：chat、bingo等</msg_type>
@@ -545,8 +554,9 @@ im20_singlechat(ToUsername, #jabber{size=Size,data=undefined,stamped=Stamped}, S
     ?LOGF("chat2 102 Data-~p,StampAndData=~p~n", [Data, StampAndData],?NOTICE),
     %%?Debug("chat2 Data-~p,StampAndData=~p~n", [Data, StampAndData]),
     put(previous, ToUsername),
+    CMIDStr = lists:append([ts_msg_server:get_id(list), "__",uuid:random_str()]),
     list_to_binary([
-                    "<msg cmid='",ts_msg_server:get_id(list), "'",
+                    "<msg cmid='",CMIDStr, "'",
                     " retry='0'", " to='", ToUsername, "'",
                     %%"@", Service, "'",
                     " chat_type='chat'>",
