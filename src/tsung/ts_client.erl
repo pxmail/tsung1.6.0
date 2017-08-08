@@ -322,18 +322,18 @@ handle_info2({gen_ts_transport, Socket, Data}, think, State = #state_rcv{request
   when (Req#ts_request.ack /= parse) ->
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ sum, size_rcv, size(Data)}),
-    %%?LOGF("Data receive from socket in state think, ack=~p, skip~n",
+    ?LOGF("Data1-1 receive from socket in state think, ack=~p, skip~n",
           [Req#ts_request.ack],?NOTICE),
-    ?DebugF("Data was ~p~n",[Data]),
-    %%?LOGF("Data2 was ~p~n",[Data],?NOTICE),
+    ?DebugF("Data1-2 was ~p~n",[Data]),
+    ?LOGF("Data1-3 was ~p~n",[Data],?NOTICE),
     NewSocket = (State#state_rcv.protocol):set_opts(Socket, [{active, once}]),
     {next_state, think, State#state_rcv{socket=NewSocket}};
 handle_info2({gen_ts_transport, _Socket, Data}, think, State) ->
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ count, error_unknown_data }),
-    ?LOG("Data receive from socket in state think, stop~n", ?ERR),
-    ?DebugF("Data2 was ~p~n",[Data]),
-    ?LOGF("Data3 was ~p~n",[Data],?NOTICE),
+    ?LOG("Data2-1 receive from socket in state think, stop~n", ?ERR),
+    ?DebugF("Data2-2 was ~p~n",[Data]),
+    ?LOGF("Data2-3 was ~p~n",[Data],?NOTICE),
     {stop, normal, State};
 %% pablo TODO:  when this could happen??
 handle_info2({inet_reply, _Socket,ok}, StateName, State ) ->
