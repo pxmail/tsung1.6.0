@@ -529,7 +529,7 @@ muc_chat2(Room, Service, Size) ->
     Result.
 
 %% <iq type="get" id="6D6E86C5-CBAE-4C8B-9CF6-6154DCD792B5"><ping xmlns="urn:xmpp:ping"/></iq>
-im20_ping#jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
+im20_ping(#jabber{size=Size,data=undefined,stamped=Stamped}, Service) ->
     Result = list_to_binary([
                              "<iq type=\"get\" ", "id=\"", uuid:random_str(), "\">",
                              "<ping xmlns=\"urn:xmpp:ping\"/></iq>"]),
