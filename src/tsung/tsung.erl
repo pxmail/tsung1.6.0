@@ -33,7 +33,8 @@
 
 %% start the application with it's dependencies
 start() ->
-    ts_utils:ensure_all_started(tsung, permanent).
+    ts_utils:ensure_all_started(tsung, permanent),
+    ts_utils:ensure_all_started(fast_xml, permanent).
 
 %%----------------------------------------------------------------------
 %% Func: start/2
