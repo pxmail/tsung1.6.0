@@ -221,7 +221,6 @@ handle_info(Info, StateName, State = #state_rcv{protocol = Transport, socket = S
 
 handle_info2({gen_ts_transport, _Socket, Data}, wait_ack, State=#state_rcv{rate_limit=TokenParam}) when is_binary(Data)->
 	?LOGF("102 ~p~n", [Data], ?INFO),
-	analyse_message(Data),
     ?DebugF("data received: size=~p ~n",[size(Data)]),
     NewTokenParam = case TokenParam of
                         undefined ->
@@ -329,6 +328,7 @@ handle_info2({gen_ts_transport, Socket, Data}, think, State = #state_rcv{request
     ts_mon:add({ sum, size_rcv, size(Data)}),
     ?LOGF("Data receive from socket in state think, ack=~p, skip~n",
           [Req#ts_request.ack],?ERR),
+	analyse_message(Data),
     NewSocket = (State#state_rcv.protocol):set_opts(Socket, [{active, once}]),
     {next_state, think, State#state_rcv{socket=NewSocket}};
 handle_info2({gen_ts_transport, _Socket, Data}, think, State) ->
