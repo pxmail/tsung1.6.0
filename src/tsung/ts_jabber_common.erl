@@ -799,8 +799,10 @@ muc_exit(Room,Nick, Service) ->
 %%  <circle_id>群ID </circle_id>
 %% </msg>
 im20_groupchat(Room, Service, Size) ->
+	DataTime = erlang:localtime(),
     CMIDStr = lists:append([ts_msg_server:get_id(list), "__",uuid:random_str()]),
-    ?LOGF("groupchat CMIDStr=~p,Room=~p~n", [CMIDStr,Room], ?NOTICE),
+	ets:insert(message, {CMIDStr, DataTime}),
+%%     ?LOGF("groupchat CMIDStr=~p,Room=~p~n", [CMIDStr,Room], ?NOTICE),
     Result = list_to_binary([
                              "<msg cmid='", CMIDStr, "'",
 %%ts_msg_server:get_id(list), "'",

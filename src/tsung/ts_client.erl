@@ -331,6 +331,7 @@ handle_info2({gen_ts_transport, Socket, Data}, think, State = #state_rcv{request
 handle_info2({gen_ts_transport, _Socket, Data}, think, State) ->
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ count, error_unknown_data }),
+	analyse_message(Data),
     ?LOG("Data2-1 receive from socket in state think, stop~n", ?ERR),
     ?DebugF("Data2-2 was ~p~n",[Data]),
     ?LOGF("Data2-3 was ~p~n",[Data],?NOTICE),
@@ -1330,3 +1331,27 @@ token_bucket(R,Burst,S0,T0,P1,Now,Sleep) ->
                     {0,Wait}
             end
     end.
+
+%% <<"<msg chat_type=\"groupchat\" cmid=\"40__c70862a8-82e3-44bb-98e0-d726eba4243e\" from=\"25402\" from_resource=\"Hisuper\" retry=\"2\" smid=\"100427134\" stime=\"1502094654298\" to=\"101729\"><body>40__c70862a8-82e3-44bb-98e0-d726eba4243e</body><circle_id>101729</circle_id><msg_type>chat</msg_type></msg>">>
+analyse_message(Data) ->
+    case fxml_stream:parse_element(Data) of
+    	#xmlel{name = <<"msg">>, attrs = Attrs} ->
+			case fxml:get_attr_s(<<"chat_type">>, Attrs) of
+				<<"chat">> ->
+						analyse_message(singlechat, Attrs);
+				<<"groupchat">> ->
+						analyse_message(groupchat, Attrs);
+				_ ->
+					none
+			end
+		{error, _Reason} ->
+			none
+	end.
+
+analyse_message(singlechat, AttrsData) ->
+	none;
+analyse_message(groupchat, AttrsData) ->
+	CMID = fxml:get_attr_s(<<"cmid">>, AttrsData),
+	ets:delete(message, CMID).
+
+
