@@ -1343,7 +1343,7 @@ analyse_message(Data) ->
 						analyse_message(groupchat, Attrs);
 				_ ->
 					none
-			end
+			end;
 		{error, _Reason} ->
 			none
 	end.
