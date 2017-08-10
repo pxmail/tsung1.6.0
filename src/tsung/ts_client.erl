@@ -1343,7 +1343,7 @@ analyse_message(Data) ->
 				_ ->
 					none
 			end;
-		{error, _Reason} ->
+		_ ->
 			none
 	end.
 
