@@ -298,7 +298,7 @@ handle_info2({gen_ts_transport, Socket, Data}, think,State=#state_rcv{
     ts_mon:add({ sum, size_rcv, size(Data)}),
     Proto = State#state_rcv.protocol,
     ?LOG("Data received from socket (bidi) in state think~n",?INFO),
-    ?LOGF("Data1 was ~p~n",[Data],?NOTICE),
+    ?LOGF("00000000000000000 ~n", [], ?DEB),
     {NextAction, NewState} = case Type:parse_bidi(Data, State) of
                    {nodata, State2, Action} ->
                        ?LOG("Bidi: no data ~n",?DEB),
@@ -323,19 +323,17 @@ handle_info2({gen_ts_transport, Socket, Data}, think, State = #state_rcv{request
   when (Req#ts_request.ack /= parse) ->
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ sum, size_rcv, size(Data)}),
-    ?LOGF("Data1-1 receive from socket in state think, ack=~p, skip~n",
+    ?LOGF("Data receive from socket in state think, ack=~p, skip~n",
           [Req#ts_request.ack],?NOTICE),
-    ?DebugF("Data1-2 was ~p~n",[Data]),
-    ?LOGF("Data1-3 was ~p~n",[Data],?NOTICE),
+	?LOGF("11111111111111111111 ~n", [], ?DEB),
     NewSocket = (State#state_rcv.protocol):set_opts(Socket, [{active, once}]),
     {next_state, think, State#state_rcv{socket=NewSocket}};
 handle_info2({gen_ts_transport, _Socket, Data}, think, State) ->
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ count, error_unknown_data }),
+	?LOGF("22222222222222222222 ~n", [], ?DEB),
 	analyse_message(Data),
-    ?LOG("Data2-1 receive from socket in state think, stop~n", ?ERR),
-    ?DebugF("Data2-2 was ~p~n",[Data]),
-    ?LOGF("Data2-3 was ~p~n",[Data],?NOTICE),
+    ?LOG("Data receive from socket in state think, stop~n", ?ERR),
     {stop, normal, State};
 %% pablo TODO:  when this could happen??
 handle_info2({inet_reply, _Socket,ok}, StateName, State ) ->
@@ -1353,6 +1351,7 @@ analyse_message(singlechat, AttrsData) ->
 	none;
 analyse_message(groupchat, AttrsData) ->
 	CMID = fxml:get_attr_s(<<"cmid">>, AttrsData),
-	ets:delete(message, CMID).
+	CMIDStr = binary_to_list(CMID),
+	ets:delete(message, CMIDStr).
 
 
