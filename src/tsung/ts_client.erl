@@ -327,12 +327,12 @@ handle_info2({gen_ts_transport, Socket, Data}, think, State = #state_rcv{request
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ sum, size_rcv, size(Data)}),
     ?LOGF("Data receive from socket in state think, ack=~p, skip~n",
-          [Req#ts_request.ack],?ERR),
+          [Req#ts_request.ack],?INFO),
 	analyse_message(Data),
     NewSocket = (State#state_rcv.protocol):set_opts(Socket, [{active, once}]),
     {next_state, think, State#state_rcv{socket=NewSocket}};
 handle_info2({gen_ts_transport, _Socket, Data}, think, State) ->
-	?LOGF("105 ~p~n", [Data], ?INFO),
+	?LOGF("105 ~p~n", [Data], ?ERR),
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ count, error_unknown_data }),
     ?LOG("Data receive from socket in state think, stop~n", ?ERR),

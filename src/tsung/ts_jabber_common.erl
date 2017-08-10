@@ -276,6 +276,11 @@ get_message(#jabber{type = 'muc:exit', room = Room, muc_service = Service, nick 
 get_message(#jabber{type = 'im20:groupchat', room = Room, muc_service = Service, size = Size}) ->
     im20_groupchat(Room, Service, Size);
 
+%%im2.0回写未收到消息
+get_message(#jabber{type = 'im20:dumpmessage'}) ->
+    im20_dumpmessage();
+
+
 get_message(Jabber=#jabber{id=user_defined}) ->
     get_message2(Jabber);
 
@@ -814,6 +819,12 @@ im20_groupchat(Room, Service, Size) ->
                              "<circle_id>", Room, "</circle_id>",
                              "</msg>"]),
 	Result.
+
+im20_dumpmessage() ->
+	LostMessageList = ets:tab2list(message),
+	?LOGF("Lost Message List ~n~p~n", [LostMessageList],?ERR).
+
+
 
 %%%----------------------------------------------------------------------
 %%% Func: privacy_get_names/2
