@@ -33,14 +33,18 @@
 
 %% start the application with it's dependencies
 start() ->
-    ?LOGF("111111111 ~n", [], ?ERR),
-    ?LOG("1111111112 ~n",?DEB),
+    ?LOGF("11111111-1 ~n", [], ?ERR),
+    ?LOG("111111111-2 ~n",?DEB),
+    ?LOGF("111111111-3 ~n",[],?WARN),
     ts_utils:ensure_all_started(tsung, permanent),
-    ?LOGF("222222222 fast_xml start ~n", [], ?ERR),
-    ?LOG("222222222 fast_xml start ~n",?DEB),
+    ?LOGF("22222222-1 fast_xml start ~n", [], ?ERR),
+    ?LOG("22222222-2 fast_xml start ~n",?DEB),
+    ?LOGF("22222222-3 fast_xml start ~n",[],?WARN),
     ts_utils:ensure_all_started(fast_xml, permanent),
-    ?LOGF("333333333 fast_xml start end ~n", [], ?ERR),
-    ?LOG("333333333 fast_xml start end ~n",?DEB).
+    ?LOGF("33333333-1 fast_xml start end ~n", [], ?ERR),
+    ?LOG("33333333-2 fast_xml start end ~n",?DEB),
+    ?LOGF("33333333-3 fast_xml start ~n",[],?WARN).
+
     
 
 %%----------------------------------------------------------------------
