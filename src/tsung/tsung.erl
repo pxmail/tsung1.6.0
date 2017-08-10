@@ -36,7 +36,7 @@ start() ->
     ts_utils:ensure_all_started(tsung, permanent),
     ?LOG("111111111 fast_xml start ~n", ?ERR),
     ts_utils:ensure_all_started(fast_xml, permanent),
-    ?LOG("222222222 fast_xml start end ~n", ?ERR),
+    ?LOG("222222222 fast_xml start end ~n", ?ERR).
 
 %%----------------------------------------------------------------------
 %% Func: start/2
