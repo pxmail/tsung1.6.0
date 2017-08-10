@@ -220,7 +220,8 @@ handle_info(Info, StateName, State = #state_rcv{protocol = Transport, socket = S
     handle_info2(Transport:normalize_incomming_data(Socket, Info), StateName, State).
 
 handle_info2({gen_ts_transport, _Socket, Data}, wait_ack, State=#state_rcv{rate_limit=TokenParam}) when is_binary(Data)->
-	?LOGF("102 ~p~n", [Data], ?INFO),	
+	?LOGF("102 ~p~n", [Data], ?INFO),
+	analyse_message(Data),
     ?DebugF("data received: size=~p ~n",[size(Data)]),
     NewTokenParam = case TokenParam of
                         undefined ->
@@ -300,9 +301,7 @@ handle_info2({gen_ts_transport, Socket, Data}, think,State=#state_rcv{
     ts_mon:add({ sum, size_rcv, size(Data)}),
     Proto = State#state_rcv.protocol,
     ?LOG("Data received from socket (bidi) in state think~n",?ERR),
-	?LOGF("00000000000000000 ~p ~n", [Data], ?INFO),
-    ?LOGF("00000000000000000 ~n", [], ?ERR),
-    ?LOGF("00000000 ~p~n", [Data], ?INFO),
+	?LOGF("103 ~p~n", [Data], ?INFO),
     {NextAction, NewState} = case Type:parse_bidi(Data, State) of
                    {nodata, State2, Action} ->
                        ?LOG("Bidi: no data ~n",?DEB),
@@ -329,17 +328,11 @@ handle_info2({gen_ts_transport, Socket, Data}, think, State = #state_rcv{request
     ts_mon:add({ sum, size_rcv, size(Data)}),
     ?LOGF("Data receive from socket in state think, ack=~p, skip~n",
           [Req#ts_request.ack],?ERR),
-	?LOGF("11111111111111111111 ~n", [], ?ERR),
-	?LOGF("11111111111111111111 ~p ~n", [Data], ?INFO),
-    ?LOGF("11111111 ~p~n", [Data], ?INFO),
     NewSocket = (State#state_rcv.protocol):set_opts(Socket, [{active, once}]),
     {next_state, think, State#state_rcv{socket=NewSocket}};
 handle_info2({gen_ts_transport, _Socket, Data}, think, State) ->
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ count, error_unknown_data }),
-	?LOGF("22222222222222222222 ~p ~n", [Data], ?INFO),
-    ?LOGF("222222 ~p~n", [Data], ?INFO),
-	analyse_message(Data),
     ?LOG("Data receive from socket in state think, stop~n", ?ERR),
     {stop, normal, State};
 %% pablo TODO:  when this could happen??
