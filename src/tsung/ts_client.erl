@@ -37,6 +37,7 @@
 
 -include("ts_config.hrl").
 -include("ts_profile.hrl").
+-include("fxml.hrl").
 
 %% External exports
 -export([start/1, next/1]).
