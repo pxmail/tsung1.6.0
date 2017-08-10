@@ -1354,6 +1354,7 @@ analyse_message(singlechat, AttrsData) ->
 analyse_message(groupchat, AttrsData) ->
 	CMID = fxml:get_attr_s(<<"cmid">>, AttrsData),
 	CMIDStr = binary_to_list(CMID),
-	ets:delete(message, CMIDStr).
+%% 	ets:delete(message, CMIDStr).
+	todo.
 
 
