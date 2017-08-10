@@ -201,7 +201,7 @@ handle_sync_event(_Event, _From, StateName, StateData) ->
 %%----------------------------------------------------------------------
 %% received data
 handle_info({erlang, _Socket, Data}, wait_ack, State) ->
-	?LOGF("101 ~p~n", [Data], ?INFO),	
+	?LOGF("101 ~p~n", [Data], ?INFO),
     ?DebugF("erlang function result received: size=~p ~n",[size(term_to_binary(Data))]),
     case handle_data_msg(Data, State) of
         {NewState=#state_rcv{ack_done=true}, _Opts} ->
@@ -297,11 +297,11 @@ handle_info2(timeout, StateName, State ) ->
 % bidirectional protocol
 handle_info2({gen_ts_transport, Socket, Data}, think,State=#state_rcv{
   clienttype=Type, bidi=true,host=Host,port=Port})  ->
+	?LOGF("103 ~p~n", [Data], ?INFO),
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ sum, size_rcv, size(Data)}),
     Proto = State#state_rcv.protocol,
     ?LOG("Data received from socket (bidi) in state think~n",?ERR),
-	?LOGF("103 ~p~n", [Data], ?INFO),
     {NextAction, NewState} = case Type:parse_bidi(Data, State) of
                    {nodata, State2, Action} ->
                        ?LOG("Bidi: no data ~n",?DEB),
@@ -324,6 +324,7 @@ handle_info2({gen_ts_transport, Socket, Data}, think,State=#state_rcv{
 % bidi is false, but parse is also false: continue even if we get data
 handle_info2({gen_ts_transport, Socket, Data}, think, State = #state_rcv{request=Req} )
   when (Req#ts_request.ack /= parse) ->
+    ?LOGF("104 ~p~n", [Data], ?INFO),
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ sum, size_rcv, size(Data)}),
     ?LOGF("Data receive from socket in state think, ack=~p, skip~n",
@@ -331,6 +332,7 @@ handle_info2({gen_ts_transport, Socket, Data}, think, State = #state_rcv{request
     NewSocket = (State#state_rcv.protocol):set_opts(Socket, [{active, once}]),
     {next_state, think, State#state_rcv{socket=NewSocket}};
 handle_info2({gen_ts_transport, _Socket, Data}, think, State) ->
+	?LOGF("105 ~p~n", [Data], ?INFO),
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ count, error_unknown_data }),
     ?LOG("Data receive from socket in state think, stop~n", ?ERR),
