@@ -40,7 +40,7 @@ start() ->
     ?LOGF("22222222-1 fast_xml start ~n", [], ?ERR),
     ?LOG("22222222-2 fast_xml start ~n",?DEB),
     ?LOGF("22222222-3 fast_xml start ~n",[],?WARN),
-    ts_utils:ensure_all_started(fast_xml, permanent),
+%%     ts_utils:ensure_all_started(fast_xml, permanent),
     ?LOGF("33333333-1 fast_xml start end ~n", [], ?ERR),
     ?LOG("33333333-2 fast_xml start end ~n",?DEB),
     ?LOGF("33333333-3 fast_xml start ~n",[],?WARN).
