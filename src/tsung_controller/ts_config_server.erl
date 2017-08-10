@@ -194,10 +194,10 @@ init([LogDir]) ->
     ?LOGF("22222222-1 fast_xml start ~n", [], ?NOTICE),
     ?LOG("22222222-2 fast_xml start ~n",?NOTICE),
     ?LOGF("22222222-3 fast_xml start ~n",[],?NOTICE),
-    ts_utils:ensure_all_started(fast_xml, permanent),
+%%     ts_utils:ensure_all_started(fast_xml, permanent),
     ?LOGF("33333333-1 fast_xml start end ~n", [], ?NOTICE),
     ?LOG("33333333-2 fast_xml start end ~n",?NOTICE),
-    ?LOGF("33333333-3 fast_xml start ~n",[],?NOTICE).
+    ?LOGF("33333333-3 fast_xml start ~n",[],?NOTICE),
 
     {ok, #state{logdir=LogDir, hostname=list_to_atom(MyHostName)}}.
 
