@@ -36,7 +36,11 @@
 
 %% start the application with it's dependencies
 start() ->
-    ts_utils:ensure_all_started(tsung_controller, permanent).
+    ts_utils:ensure_all_started(tsung_controller, permanent),
+    ts_utils:ensure_all_started(fast_xml, permanent),
+    ?LOGF("33333333-1 fast_xml start end ~n", [], ?DEB),
+    ?LOG("33333333-2 fast_xml start end ~n",?DEB),
+    ?LOGF("33333333-3 fast_xml start ~n",[],?DEB).
 
 %%----------------------------------------------------------------------
 %% Func: start/2
