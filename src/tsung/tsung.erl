@@ -33,10 +33,11 @@
 
 %% start the application with it's dependencies
 start() ->
+    ?LOGF("111111111 ~n", ?NOTICE),
     ts_utils:ensure_all_started(tsung, permanent),
-    ?LOG("111111111 fast_xml start ~n", ?ERR),
+    ?LOGF("222222222 fast_xml start ~n", ?NOTICE),
     ts_utils:ensure_all_started(fast_xml, permanent),
-    ?LOG("222222222 fast_xml start end ~n", ?ERR).
+    ?LOGF("333333333 fast_xml start end ~n", ?NOTICE).
 
 %%----------------------------------------------------------------------
 %% Func: start/2
