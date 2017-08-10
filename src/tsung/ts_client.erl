@@ -297,8 +297,8 @@ handle_info2({gen_ts_transport, Socket, Data}, think,State=#state_rcv{
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ sum, size_rcv, size(Data)}),
     Proto = State#state_rcv.protocol,
-    ?LOG("Data received from socket (bidi) in state think~n",?INFO),
-    ?LOGF("00000000000000000 ~n", [], ?DEB),
+    ?LOG("Data received from socket (bidi) in state think~n",?ERR),
+    ?LOGF("00000000000000000 ~n", [], ?ERR),
     {NextAction, NewState} = case Type:parse_bidi(Data, State) of
                    {nodata, State2, Action} ->
                        ?LOG("Bidi: no data ~n",?DEB),
@@ -324,14 +324,14 @@ handle_info2({gen_ts_transport, Socket, Data}, think, State = #state_rcv{request
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ sum, size_rcv, size(Data)}),
     ?LOGF("Data receive from socket in state think, ack=~p, skip~n",
-          [Req#ts_request.ack],?NOTICE),
-	?LOGF("11111111111111111111 ~n", [], ?DEB),
+          [Req#ts_request.ack],?ERR),
+	?LOGF("11111111111111111111 ~n", [], ?ERR),
     NewSocket = (State#state_rcv.protocol):set_opts(Socket, [{active, once}]),
     {next_state, think, State#state_rcv{socket=NewSocket}};
 handle_info2({gen_ts_transport, _Socket, Data}, think, State) ->
     ts_mon:rcvmes({State#state_rcv.dump, self(), Data}),
     ts_mon:add({ count, error_unknown_data }),
-	?LOGF("22222222222222222222 ~n", [], ?DEB),
+	?LOGF("22222222222222222222 ~n", [], ?ERR),
 	analyse_message(Data),
     ?LOG("Data receive from socket in state think, stop~n", ?ERR),
     {stop, normal, State};
