@@ -1334,6 +1334,7 @@ token_bucket(R,Burst,S0,T0,P1,Now,Sleep) ->
     end.
 
 %% <<"<msg chat_type=\"groupchat\" cmid=\"40__c70862a8-82e3-44bb-98e0-d726eba4243e\" from=\"25402\" from_resource=\"Hisuper\" retry=\"2\" smid=\"100427134\" stime=\"1502094654298\" to=\"101729\"><body>40__c70862a8-82e3-44bb-98e0-d726eba4243e</body><circle_id>101729</circle_id><msg_type>chat</msg_type></msg>">>
+%% <msg chat_type="testover" ></msg>
 analyse_message(Data) ->
     case fxml_stream:parse_element(Data) of
     	#xmlel{name = <<"msg">>, attrs = Attrs} ->
@@ -1342,6 +1343,8 @@ analyse_message(Data) ->
 						analyse_message(singlechat, Attrs);
 				<<"groupchat">> ->
 						analyse_message(groupchat, Attrs);
+				<<"testover">> ->
+						im20_dumpmessage();
 				_ ->
 					none
 			end;
@@ -1355,5 +1358,16 @@ analyse_message(groupchat, AttrsData) ->
 	CMID = fxml:get_attr_s(<<"cmid">>, AttrsData),
 	CMIDStr = binary_to_list(CMID),
 	ets:delete(message, CMIDStr).
+
+
+%%----------------------------------------------------------------------
+%% Func: im20_dumpmessage/0
+%% 
+%%----------------------------------------------------------------------
+im20_dumpmessage() ->
+	?LOGF("3002 ~n",[],?ERR),
+	LostMessageNum = ets:info(message, size),
+	LostMessageList = ets:tab2list(message),
+	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
 
 
