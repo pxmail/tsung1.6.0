@@ -415,7 +415,7 @@ terminate(Reason, State) ->
     close_stats(State),
 	?LOGF("3001 ~n",[],?ERR),
 	im20_dumpmessage(),
-	sleep(6000),
+	timer:sleep(60000),
 	?LOGF("3004 ~n",[],?ERR),
     slave:stop(node()).
 
