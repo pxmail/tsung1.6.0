@@ -821,8 +821,9 @@ im20_groupchat(Room, Service, Size) ->
 	Result.
 
 im20_dumpmessage() ->
+	LostMessageNum = ets:info(message, size),
 	LostMessageList = ets:tab2list(message),
-	?LOGF("Lost Message List ~n~p~n", [LostMessageList],?ERR).
+	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
 
 
 
