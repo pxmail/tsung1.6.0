@@ -413,6 +413,7 @@ terminate(Reason, State) ->
 	?LOGF("2116 ~n",[],?NOTICE),
     ?LOGF("stopping monitor (~p)~n",[Reason],?NOTICE),
     close_stats(State),
+	im20_dumpmessage(),
 	?LOGF("1104 ~n",[],?NOTICE),
     slave:stop(node()).
 
@@ -550,3 +551,13 @@ start_launchers(Machines) ->
 %%             todo
 %%     end,
 %%     post_process_line(io:get_line(Dev, ""),Dev, Logs).
+
+%%----------------------------------------------------------------------
+%% Func: im20_dumpmessage/0
+%% 
+%%----------------------------------------------------------------------
+im20_dumpmessage() ->
+	LostMessageNum = ets:info(message, size),
+	LostMessageList = ets:tab2list(message),
+	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
+
