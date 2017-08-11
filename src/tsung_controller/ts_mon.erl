@@ -407,8 +407,10 @@ close_stats(State) ->
 %% Returns: any (ignored by gen_server)
 %%----------------------------------------------------------------------
 terminate(Reason, #state{wait_gui=true}) ->
+	?LOGF("2115 ~n",[],?NOTICE),
     ?LOGF("stopping monitor by gui (~p)~n",[Reason],?NOTICE);
 terminate(Reason, State) ->
+	?LOGF("2116 ~n",[],?NOTICE),
     ?LOGF("stopping monitor (~p)~n",[Reason],?NOTICE),
     close_stats(State),
 	?LOGF("1104 ~n",[],?NOTICE),

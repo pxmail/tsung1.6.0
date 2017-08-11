@@ -180,6 +180,7 @@ handle_info(_Info, State) ->
 %% Returns: any (ignored by gen_server)
 %%--------------------------------------------------------------------
 terminate(Reason, _State) ->
+	?LOGF("2106 ~n",[],?NOTICE),
     ?LOGF("Die ! (~p)~n",[Reason],?ERR),
     ok.
 

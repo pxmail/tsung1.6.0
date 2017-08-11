@@ -169,6 +169,7 @@ handle_info(_Info, State) ->
 %% Returns: any (ignored by gen_server)
 %%--------------------------------------------------------------------
 terminate(_Reason, State) ->
+	?LOGF("2126 ~n",[],?NOTICE),
     case State#state.acceptsock of
         undefined -> nothing;
         Socket -> gen_tcp:close(Socket)

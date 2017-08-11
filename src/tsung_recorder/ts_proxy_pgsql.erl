@@ -119,6 +119,7 @@ process_data(State,RawData = <<Code:8/integer, Size:4/integer-unit:8, Tail/binar
                              ts_proxy_recorder:dorecord({#pgsql_request{type=sql, sql=SQLStr}}),
                              State#proxy{buffer= <<>>};
                          terminate ->
+							 ?LOGF("2127 ~n",[],?NOTICE),
                              ts_proxy_recorder:dorecord({#pgsql_request{type=close}}),
                              State#proxy{buffer= <<>>};
                          {password, Password} ->

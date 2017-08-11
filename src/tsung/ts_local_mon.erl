@@ -145,8 +145,10 @@ handle_info(_Info, State) ->
 %% Returns: any (ignored by gen_server)
 %%--------------------------------------------------------------------
 terminate(_, #state{dump_iodev=undefined}) ->
+	?LOGF("2103 ~n",[],?NOTICE),
     ok;
 terminate(_Reason, #state{dump_iodev=IODev}) ->
+	?LOGF("2104 ~n",[],?NOTICE),
     file:close(IODev).
 
 %%--------------------------------------------------------------------

@@ -142,6 +142,7 @@ handle_info({timeout,_Ref,start_beam},State=#state{host=Host})->
 %% Returns: any (ignored by gen_server)
 %%--------------------------------------------------------------------
 terminate(_Reason, _State) ->
+	?LOGF("2118 ~n",[],?NOTICE),
     ok.
 
 %%--------------------------------------------------------------------

@@ -223,6 +223,7 @@ handle_info(_Info, State) ->
 %% Returns: any (ignored by gen_server)
 %%----------------------------------------------------------------------
 terminate(Reason, State) ->
+	?LOGF("2122 ~n",[],?NOTICE),
     ?LOGF("stopping stats monitor (~p)~n",[Reason],?INFO),
     export_stats(State),
     ok.

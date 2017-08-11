@@ -157,6 +157,7 @@ handle_info(_Info, State) ->
 %% Returns: any (ignored by gen_server)
 %%----------------------------------------------------------------------
 terminate(Reason, State) ->
+	?LOGF("2114 ~n",[],?NOTICE),
     ?LOGF("stopping match logger (~p)~n",[Reason],?INFO),
     file:close(State#state.fd),
     ok.

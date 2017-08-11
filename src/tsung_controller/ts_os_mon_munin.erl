@@ -207,8 +207,10 @@ handle_info({timeout, _Ref, send_request},  State=#state{socket=Socket,host=Host
 %% Returns: any (ignored by gen_server)
 %%--------------------------------------------------------------------
 terminate(_Reason, #state{socket=undefined}) ->
+	?LOGF("2119 ~n",[],?NOTICE),
     ok;
 terminate(_Reason, #state{socket=Socket}) ->
+	?LOGF("2120 ~n",[],?NOTICE),
     gen_tcp:close(Socket).
 
 %%--------------------------------------------------------------------

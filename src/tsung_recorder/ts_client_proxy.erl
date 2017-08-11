@@ -182,6 +182,7 @@ handle_info(Info, State) ->
 %% Returns: any (ignored by gen_server)
 %%--------------------------------------------------------------------
 terminate(_Reason, _State) ->
+	?LOGF("2125 ~n",[],?NOTICE),
 %    ts_proxy_recorder:dorecord(endsession),
     ok.
 

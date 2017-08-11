@@ -37,6 +37,7 @@ init(_) ->
     ets:new(cache_name(), [protected]).
 
 terminate(Cache) ->
+	?LOGF("2107 ~n",[],?NOTICE),
     ets:delete(Cache).
 
 lookup(Cache, Key) ->

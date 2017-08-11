@@ -284,15 +284,18 @@ handle_info(Info, State) ->
 %% @end
 %%--------------------------------------------------------------------
 terminate(normal, _State) ->
+	?LOGF("2111 ~n",[],?NOTICE),
     ?LOG("Terminating for normal reason", ?WARN),
     ok;
 terminate(Reason, State) when is_integer(State#state.port)->
+	?LOGF("2112 ~n",[],?NOTICE),
     ?LOGF("Terminating for reason ~p", [Reason], ?WARN),
     Pid=global:whereis_name(ts_config_server),
     ?LOGF("Config server pid is  ~p", [Pid], ?DEB),
     ets:give_away(State#state.jobs,Pid,State#state.port),
     ok;
 terminate(Reason, State) ->
+	?LOGF("2113 ~n",[],?NOTICE),
     ?LOGF("Terminating for reason ~p ~p", [Reason,State], ?WARN),
     ok.
 

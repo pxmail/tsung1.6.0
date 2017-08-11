@@ -186,6 +186,7 @@ handle_info(_Info, StateName, StateData) ->
 %%----------------------------------------------------------------------
 terminate(Reason, _StateName, _StateData) ->
     ?LOGF("launcher terminating for reason ~p~n",[Reason], ?INFO),
+	?LOGF("2101 ~n",[],?NOTICE),
     ts_launcher_mgr:die(static),
     ok.
 

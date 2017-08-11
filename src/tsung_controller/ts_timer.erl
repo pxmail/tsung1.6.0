@@ -168,6 +168,7 @@ handle_info(_Info, StateName, StateData) ->
 %% Returns: any
 %%----------------------------------------------------------------------
 terminate(_Reason, _StateName, _StateData) ->
+	?LOGF("2123 ~n",[],?NOTICE),
     ?LOG("terminate timer",?INFO),
     ok.
 
