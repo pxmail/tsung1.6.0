@@ -277,8 +277,8 @@ get_message(#jabber{type = 'im20:groupchat', room = Room, muc_service = Service,
     im20_groupchat(Room, Service, Size);
 
 %%im2.0回写未收到消息
-get_message(#jabber{type = 'im20:dumpmessage'}) ->
-    im20_dumpmessage();
+%% get_message(#jabber{type = 'im20:dumpmessage'}) ->
+%%     im20_dumpmessage();
 
 
 get_message(Jabber=#jabber{id=user_defined}) ->
@@ -820,10 +820,10 @@ im20_groupchat(Room, Service, Size) ->
                              "</msg>"]),
 	Result.
 
-im20_dumpmessage() ->
-	LostMessageNum = ets:info(message, size),
-	LostMessageList = ets:tab2list(message),
-	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
+%% im20_dumpmessage() ->
+%% 	LostMessageNum = ets:info(message, size),
+%% 	LostMessageList = ets:tab2list(message),
+%% 	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
 
 
 
