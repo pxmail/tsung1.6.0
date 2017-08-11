@@ -138,6 +138,7 @@ stop(SessionID, _Env, _Input) ->
                                 ++ "<h1 class=\"page-header\">Tsung controller  is stopping now !</h1>"
 
                                ]),
+	?LOGF("1105 ~n",[],?NOTICE),
     slave:stop(node()).
 
 status(SessionID, _Env, _Input) ->

@@ -438,6 +438,7 @@ handle_cast({newbeam, Host, Arrivals}, State=#state{last_beam_id = NodeId, confi
     case rpc:call(Node,tsung,start,[],?RPC_TIMEOUT) of
         {badrpc, Reason} ->
             ?LOGF("Fail to start tsung on beam ~p, reason: ~p",[Node,Reason], ?ERR),
+			?LOGF("1103 ~n",[],?NOTICE),
             slave:stop(Node),
             {noreply, State};
         _ ->

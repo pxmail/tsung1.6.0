@@ -146,6 +146,7 @@ handle_info(_Info, State) ->
 %% The return value is ignored.
 %%--------------------------------------------------------------------
 terminate(_Reason, _State) ->
+	?LOGF("1101 ~n",[],?NOTICE),
     case ts_utils:is_controller() of
         false ->
             slave:stop(node()); %% commit suicide.

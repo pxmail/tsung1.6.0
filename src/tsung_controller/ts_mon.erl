@@ -411,6 +411,7 @@ terminate(Reason, #state{wait_gui=true}) ->
 terminate(Reason, State) ->
     ?LOGF("stopping monitor (~p)~n",[Reason],?NOTICE),
     close_stats(State),
+	?LOGF("1104 ~n",[],?NOTICE),
     slave:stop(node()).
 
 %%--------------------------------------------------------------------
