@@ -1385,7 +1385,7 @@ im20_dumpmessage() ->
 				LostMessageLast = ets:lookup(message, LastKey),
 				lists:append(LostMessageFirst, LostMessageLast);
 		   true ->
-				LostMessageList = ets:tab2list(message)
+				ets:tab2list(message)
 		end,
 	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
 
