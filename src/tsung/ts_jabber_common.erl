@@ -798,9 +798,12 @@ muc_exit(Room,Nick, Service) ->
 %%   <at_who>121221,3432</at_who>
 %%  <circle_id>群ID </circle_id>
 %% </msg>
+%% "0040__5421__c70862a8-82e3-44bb-98e0-d726eba4243e"
 im20_groupchat(Room, Service, Size) ->
+	?LOGF("3007 Size=~p~n",[Size],?ERR),	
 	DataTime = erlang:localtime(),
-    CMIDStr = lists:append([ts_msg_server:get_id(list), "__",uuid:random_str()]),
+    GroupMemberNumStr = string:right(integer_to_list(Size), 5, $0),
+    CMIDStr = lists:append([GroupMemberNumStr,"__", ts_msg_server:get_id(list), "__", uuid:random_str()]),
 	ets:insert(message, {CMIDStr, DataTime}),
 %%     ?LOGF("groupchat CMIDStr=~p,Room=~p~n", [CMIDStr,Room], ?NOTICE),
     Result = list_to_binary([

@@ -1354,10 +1354,20 @@ analyse_message(Data) ->
 
 analyse_message(singlechat, AttrsData) ->
 	none;
+
+%% "00040__5421__c70862a8-82e3-44bb-98e0-d726eba4243e"
 analyse_message(groupchat, AttrsData) ->
 	CMID = fxml:get_attr_s(<<"cmid">>, AttrsData),
 	CMIDStr = binary_to_list(CMID),
-	ets:delete(message, CMIDStr).
+	GroupMemberNumStr = string:left(CMIDStr, 5),
+	{GroupMemberNum, _} = string:to_integer(GroupMemberNumStr),
+	case ets:update_counter(message, CMIDStr, {3, 1}) of
+		GroupMemberNum ->
+			ets:delete(message, CMIDStr);
+		_ ->
+			none
+	end.
+	
 
 
 %%----------------------------------------------------------------------
@@ -1367,7 +1377,10 @@ analyse_message(groupchat, AttrsData) ->
 im20_dumpmessage() ->
 	?LOGF("3002 ~n",[],?ERR),
 	LostMessageNum = ets:info(message, size),
+	if LostMessageNum > 1000 ->
+			ets:select_count(_, _)
 	LostMessageList = ets:tab2list(message),
+	
 	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
 
 
