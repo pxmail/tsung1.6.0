@@ -1377,10 +1377,18 @@ analyse_message(groupchat, AttrsData) ->
 im20_dumpmessage() ->
 	?LOGF("3002 ~n",[],?ERR),
 	LostMessageNum = ets:info(message, size),
-	if LostMessageNum > 1000 ->
-			ets:select_count(_, _)
-	LostMessageList = ets:tab2list(message),
-	
+	LostMessageList = 
+		if LostMessageNum > 1000 ->
+				FirstKey = ets:first(message),
+				LostMessageFirst = ets:lookup(message, FirstKey),
+				LastKey = ets:last(message),
+				LostMessageLast = ets:lookup(message, LastKey),
+				lists:append(LostMessageFirst, LostMessageLast);
+		   true ->
+				LostMessageList = ets:tab2list(message)
+		end,
 	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
+
+
 
 
