@@ -568,12 +568,3 @@ im20_dumplog() ->
 	TokenList = ets:tab2list(tokens),
 	?LOGF("Token Num=~p~n~p~n", [TokenNum, TokenList],?ERR).
 
-
-
-
-
-
-
-
-
-	todo.
