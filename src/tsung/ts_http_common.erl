@@ -74,6 +74,7 @@ http_no_body(Method,#http_request{url=URL, version=Version, cookie=Cookie,
                     set_cookie_header({Cookie, Host, URL}),
                     headers(Headers),
                     ?CRLF]),
+	?LOGF("903 URL=~p~n", [URL], ?INFO),
     ?DebugF("Headers~n-------------~n~s~n",[R]),
     R;
 %% if modified since request
