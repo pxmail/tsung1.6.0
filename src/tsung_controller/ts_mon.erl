@@ -413,10 +413,10 @@ terminate(Reason, State) ->
 	?LOGF("2116 ~n",[],?NOTICE),
     ?LOGF("stopping monitor (~p)~n",[Reason],?NOTICE),
     close_stats(State),
-	?LOGF("3001 ~n",[],?ERR),
-%% 	im20_dumpmessage(),
-%% 	timer:sleep(60000),
-	?LOGF("3004 ~n",[],?ERR),
+	?LOGF("im20_dumplog ~n",[],?ERR),
+	im20_dumplog(),
+	timer:sleep(60000),
+	?LOGF("test finish!!! ~n",[],?ERR),
     slave:stop(node()).
 
 %%--------------------------------------------------------------------
@@ -555,12 +555,25 @@ start_launchers(Machines) ->
 %%     post_process_line(io:get_line(Dev, ""),Dev, Logs).
 
 %%----------------------------------------------------------------------
-%% Func: im20_dumpmessage/0
+%% Func: im20_dumplog/0
 %% 
 %%----------------------------------------------------------------------
-%% im20_dumpmessage() ->
-%% 	?LOGF("3002 ~n",[],?ERR),
+im20_dumplog() ->
+%% 	?LOGF("im20_dump_lostmessage ~n",[],?ERR),
 %% 	LostMessageNum = ets:info(message, size),
 %% 	LostMessageList = ets:tab2list(message),
-%% 	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
+%% 	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR),
+	?LOGF("im20_dump_tokens ~n",[],?ERR),
+	TokenNum = ets:info(tokens, size),
+	TokenList = ets:tab2list(tokens),
+	?LOGF("Token Num=~p~n~p~n", [TokenNum, TokenList],?ERR).
 
+
+
+
+
+
+
+
+
+	todo.

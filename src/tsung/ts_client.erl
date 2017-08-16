@@ -221,7 +221,7 @@ handle_info(Info, StateName, State = #state_rcv{protocol = Transport, socket = S
 
 handle_info2({gen_ts_transport, _Socket, Data}, wait_ack, State=#state_rcv{rate_limit=TokenParam}) when is_binary(Data)->
 	?LOGF("102 Data=~p~n", [Data], ?INFO),
-	get_token_from_http_body(Data),
+	record_token_passwd(Data),
 	?DebugF("data received: size=~p ~n",[size(Data)]),
     NewTokenParam = case TokenParam of
                         undefined ->
@@ -1353,20 +1353,18 @@ analyse_message(Data) ->
 			none
 	end.
 
-%% "69256c30f2bd4b9787a3b204348e01e3"
-get_token_from_http_body(Bin) ->
+%% Token="1a3ba76368ba48d9a885302f9cd047e2"
+%% DecryptPassword="739bb2166"
+record_token_passwd(Bin) ->
 	String = binary_to_list(Bin),
 	Index1 = string:str(String, "token"),
 	Token = string:sub_string(String, Index1 + 8, Index1 + 8 + 32 - 1),
-	?LOGF("106 Token=~p~n", [Token], ?INFO),
-	
 	Index2 = string:str(String, "decryptPassword"),
 	String2 = string:sub_string(String, Index2 + 18),
 	Index3 = string:str(String2, ","),
-	?LOGF("107 String2=~p,Index2=~p,Index3=~p~n", [String2,Index2,Index3], ?INFO),
 	DecryptPassword = string:sub_string(String2, 1, Index3 - 2),
-	?LOGF("108 Index2=~p,String2=~p,Index3=~p,DecryptPassword=~p~n", [Index2,String2,Index3,DecryptPassword], ?INFO),
-	todo.
+%% 	?LOGF("106 Token=~p,DecryptPassword=~p~n", [Token,DecryptPassword], ?INFO),
+	ets:insert(tokens, {Token, DecryptPassword}).
 
 
 
