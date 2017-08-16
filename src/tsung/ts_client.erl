@@ -221,8 +221,10 @@ handle_info(Info, StateName, State = #state_rcv{protocol = Transport, socket = S
 
 handle_info2({gen_ts_transport, _Socket, Data}, wait_ack, State=#state_rcv{rate_limit=TokenParam}) when is_binary(Data)->
 	?LOGF("102 Data=~p~n", [Data], ?INFO),
-	JSON = mochijson2:decode(Data),
-	?LOGF("103 JSON~p~n", [JSON], ?INFO),
+	DataStr = binary_to_list(Data),
+	?LOGF("103 DataStr=~p~n", [DataStr], ?INFO),
+	JSON = mochijson2:decode(binary_to_list(Data)),
+	?LOGF("104 JSON=~p~n", [JSON], ?INFO),
     ?DebugF("data received: size=~p ~n",[size(Data)]),
     NewTokenParam = case TokenParam of
                         undefined ->
