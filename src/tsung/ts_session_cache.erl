@@ -91,6 +91,7 @@ get_user_agent()->
 %%--------------------------------------------------------------------
 init([]) ->
     ets:new(message, [named_table, set, public,{read_concurrency, true}, {write_concurrency, false}]),
+	ets:new(tokens, [named_table, set, public,{read_concurrency, true}, {write_concurrency, false}]),
     Table = ets:new(sessiontable, [set, private]),
     {ok, #state{table=Table}}.
 

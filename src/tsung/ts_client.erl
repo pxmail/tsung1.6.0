@@ -223,8 +223,6 @@ handle_info2({gen_ts_transport, _Socket, Data}, wait_ack, State=#state_rcv{rate_
 	?LOGF("102 Data=~p~n", [Data], ?INFO),
 	DataStr = binary_to_list(Data),
 	?LOGF("103 DataStr=~p~n", [DataStr], ?INFO),
-	JSON = mochijson2:decode(binary_to_list(Data)),
-	?LOGF("104 JSON=~p~n", [JSON], ?INFO),
     ?DebugF("data received: size=~p ~n",[size(Data)]),
     NewTokenParam = case TokenParam of
                         undefined ->
@@ -1355,6 +1353,22 @@ analyse_message(Data) ->
 		_ ->
 			none
 	end.
+
+%% "69256c30f2bd4b9787a3b204348e01e3"
+get_token_from_http_body(Bin) ->
+	String = binary_to_list(Bin),
+	Index1 = string:str(String, "token"),
+	Token = string:sub_string(String, Index1 + 8, Index1 + 8 + 32 - 1),
+	?LOGF("106 Token=~p~n", [Token], ?INFO),
+
+	Index2 = string:str(String, "decryptPassword"),
+	String2 = string:sub_string(String, Index2 + 18),
+	Index3 = string:str(String2, ","),
+	DecryptPassword = string:sub_string(String, Index2 + 18, Index3 - 2),
+	?LOGF("107 Index2=~p,String2=~p,Index3=~p,DecryptPassword=~p~n", [Index2,String2,Index3,DecryptPassword], ?INFO),
+	todo.
+
+
 
 analyse_message(singlechat, AttrsData) ->
 	none;
