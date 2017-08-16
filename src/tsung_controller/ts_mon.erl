@@ -566,5 +566,8 @@ im20_dumplog() ->
 	?LOGF("im20_dump_tokens ~n",[],?ERR),
 	TokenNum = ets:info(tokens, size),
 	TokenList = ets:tab2list(tokens),
-	?LOGF("Token Num=~p~n~p~n", [TokenNum, TokenList],?ERR).
+	?LOGF("User Token Num=~p~n~p~n", [TokenNum, TokenList],?ERR).
+
+
+
 
