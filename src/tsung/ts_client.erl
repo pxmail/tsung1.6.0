@@ -1363,8 +1363,8 @@ get_token_from_http_body(Bin) ->
 	Index2 = string:str(String, "decryptPassword"),
 	String2 = string:sub_string(String, Index2 + 18),
 	Index3 = string:str(String2, ","),
-	?LOGF("107 String=~p,Index2=~p,Index3=~p~n", [Token,Index2,Index3], ?INFO),
-	DecryptPassword = string:sub_string(String, Index2 + 18, Index3 - 2),
+	?LOGF("107 String2=~p,Index2=~p,Index3=~p~n", [String2,Index2,Index3], ?INFO),
+	DecryptPassword = string:sub_string(String2, 1, Index3 - 2),
 	?LOGF("108 Index2=~p,String2=~p,Index3=~p,DecryptPassword=~p~n", [Index2,String2,Index3,DecryptPassword], ?INFO),
 	todo.
 
