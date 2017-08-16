@@ -126,6 +126,7 @@ http_body(Method,#http_request{url=URL, version=Version,
                ?CRLF
               ],
     ?LOGF("Headers~n-------------~n~s~n",[H],?DEB),
+    ?LOGF("902 Content=~p~n", [Content], ?INFO),
     list_to_binary([H, Content ]).
 
 %%----------------------------------------------------------------------
