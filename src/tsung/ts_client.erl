@@ -1358,18 +1358,21 @@ analyse_message(Data) ->
 record_token_passwd(Bin) ->
 	String = binary_to_list(Bin),
 	Index1 = string:str(String, "token"),
-	Token = string:sub_string(String, Index1 + 8, Index1 + 8 + 32 - 1),
-	Index2 = string:str(String, "decryptPassword"),
-	String2 = string:sub_string(String, Index2 + 18),
-	Index3 = string:str(String2, ","),
-	DecryptPassword = string:sub_string(String2, 1, Index3 - 2),
-	Index4 = string:str(String, "username"),
-	String3 = string:sub_string(String, Index4 + 11),
-	Index5 = string:str(String3, "\""),
-	Username = string:sub_string(String3, 1, Index5 - 1),
-	?LOGF("106 Username=~p,Token=~p,DecryptPassword=~p~n", [Username,Token,DecryptPassword], ?INFO),
-	ets:insert(tokens, {Username, Token, DecryptPassword}).
-
+	if Index1 > 0 ->
+			Token = string:sub_string(String, Index1 + 8, Index1 + 8 + 32 - 1),
+			Index2 = string:str(String, "decryptPassword"),
+			String2 = string:sub_string(String, Index2 + 18),
+			Index3 = string:str(String2, ","),
+			DecryptPassword = string:sub_string(String2, 1, Index3 - 2),
+			Index4 = string:str(String, "username"),
+			String3 = string:sub_string(String, Index4 + 11),
+			Index5 = string:str(String3, "\""),
+			Username = string:sub_string(String3, 1, Index5 - 1),
+			?LOGF("106 Username=~p,Token=~p,DecryptPassword=~p~n", [Username,Token,DecryptPassword], ?INFO),
+			ets:insert(tokens, {Username, Token, DecryptPassword});
+		true ->
+			nothing
+	end.
 
 
 analyse_message(singlechat, AttrsData) ->
