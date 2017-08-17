@@ -127,9 +127,11 @@ http_body(Method,#http_request{url=URL, version=Version,
                ?CRLF
               ],
     ?LOGF("Headers~n-------------~n~s~n",[H],?DEB),
-	Content2 = http_uri:encode(Content),
+	Content2 = http_uri:encode(binary_to_list(Content)),
     ?LOGF("9902 Content=~p,Content2=~p~n", [Content,Content2], ?INFO),
-    list_to_binary([H, Content2]).
+    H = list_to_binary([H, Content2]),
+	?LOGF("9903 H=~p~n", [H], ?INFO),
+	list_to_binary([H, Content2]).
 
 %%----------------------------------------------------------------------
 %% some HTTP headers functions
