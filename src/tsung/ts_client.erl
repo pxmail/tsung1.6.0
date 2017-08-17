@@ -1363,8 +1363,12 @@ record_token_passwd(Bin) ->
 	String2 = string:sub_string(String, Index2 + 18),
 	Index3 = string:str(String2, ","),
 	DecryptPassword = string:sub_string(String2, 1, Index3 - 2),
-%% 	?LOGF("106 Token=~p,DecryptPassword=~p~n", [Token,DecryptPassword], ?INFO),
-	ets:insert(tokens, {Token, DecryptPassword}).
+	Index4 = string:str(String, "username"),
+	String3 = string:sub_string(String, Index4 + 11),
+	Index5 = string:str(String3, "\""),
+	Username = string:sub_string(String3, 1, Index5 - 1),
+	?LOGF("106 Username=~p,Token=~p,DecryptPassword=~p~n", [Username,Token,DecryptPassword], ?INFO),
+	ets:insert(tokens, {Username, Token, DecryptPassword}).
 
 
 
