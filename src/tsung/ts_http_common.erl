@@ -126,11 +126,12 @@ http_body(Method,#http_request{url=URL, version=Version,
                headers(Headers),
                ?CRLF
               ],
-    ?LOGF("Headers~n-------------~n~s~n",[H],?DEB),
+    ?LOGF("Headers~n-------------~n~s~n",[H],?INFO),
 %% 	Content2 = http_uri:encode(binary_to_list(Content)),
 %%     ?LOGF("9902 Content=~p,Content2=~p~n", [Content,Content2], ?INFO),
 %%     H2 = list_to_binary([H, Content2]),
-%% 	?LOGF("9903 H=~p~n", [H2], ?INFO),
+	H2 = list_to_binary([H, Content]),
+	?LOGF("9903 H=~p~n", [H2], ?INFO),
 	list_to_binary([H, Content]).
 
 %%----------------------------------------------------------------------
