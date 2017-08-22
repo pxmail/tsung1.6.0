@@ -800,7 +800,7 @@ muc_exit(Room,Nick, Service) ->
 %% </msg>
 %% "0040__5421__c70862a8-82e3-44bb-98e0-d726eba4243e"
 im20_groupchat(Room, Service, Size) ->
-	?LOGF("3007 Size=~p~n",[Size],?ERR),	
+	?LOGF("3007 Size=~p~n",[Size],?INFO),	
 	DataTime = erlang:localtime(),
     GroupMemberNumStr = string:right(integer_to_list(Size), 5, $0),
     CMIDStr = lists:append([GroupMemberNumStr,"__", ts_msg_server:get_id(list), "__", uuid:random_str()]),
