@@ -105,7 +105,8 @@ handle_call({update_counter, CMIDStr, GroupMemberNum}, _From, State) ->
 			ets:delete(message, CMIDStr);
 		_ ->
 			none
-	end;
+	end,
+	{reply, normal, ok, State}.
 
 handle_call(stop, _From, State)->
     {stop, normal, ok, State}.
