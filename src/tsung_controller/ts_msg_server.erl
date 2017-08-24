@@ -106,7 +106,7 @@ handle_call({update_counter, CMIDStr, GroupMemberNum}, _From, State) ->
 		_ ->
 			none
 	end,
-	{reply, normal, ok, State}.
+	{reply, ok, State};
 
 handle_call(stop, _From, State)->
     {stop, normal, ok, State}.
