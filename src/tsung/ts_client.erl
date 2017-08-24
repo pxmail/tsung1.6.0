@@ -1384,7 +1384,7 @@ analyse_message(groupchat, AttrsData) ->
 	CMIDStr = binary_to_list(CMID),
 	GroupMemberNumStr = string:left(CMIDStr, 5),
 	{GroupMemberNum, _} = string:to_integer(GroupMemberNumStr),
-	case ets:update_counter(message, CMIDStr, {3, 1}) of
+	case ets:update_counter(message, CMIDStr, {2, 1}) of
 		GroupMemberNum ->
 			ets:delete(message, CMIDStr);
 		_ ->
