@@ -1380,9 +1380,6 @@ analyse_message(singlechat, AttrsData) ->
 
 %% "00040__5421__c70862a8-82e3-44bb-98e0-d726eba4243e"
 analyse_message(groupchat, AttrsData) ->
-	none.
-analyse_message2(groupchat, AttrsData) ->
-	
 	CMID = fxml:get_attr_s(<<"cmid">>, AttrsData),
 	CMIDStr = binary_to_list(CMID),
 	GroupMemberNumStr = string:left(CMIDStr, 5),
