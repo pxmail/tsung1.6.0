@@ -27,6 +27,7 @@
 -vc('$Id$ ').
 
 -export([get_id/0, get_id/1, reset/0]).
+-export([update_counter/2]).
 
 -include("ts_macros.hrl").
 
@@ -56,6 +57,9 @@ get_id(list)->
 
 get_id({_,_DynData}) -> % to use this fun in substitutions
     get_id(list).
+
+update_counter(CMIDStr, GroupMemberNum) ->
+	 gen_server:call({global, ?MODULE}, {update_counter, CMIDStr, GroupMemberNum}).
 
 reset()->
     gen_server:call({global, ?MODULE}, reset).
@@ -94,8 +98,20 @@ handle_call(get_id, _From, State) ->
 handle_call(reset, _From, State) ->
     {reply, ok, State#state{number = 0}};
 
+%%
+handle_call({update_counter, CMIDStr, GroupMemberNum}, _From, State) ->
+	case ets:update_counter(message, CMIDStr, {2, 1}) of
+		GroupMemberNum ->
+			ets:delete(message, CMIDStr);
+		_ ->
+			none
+	end;
+
 handle_call(stop, _From, State)->
     {stop, normal, ok, State}.
+
+
+
 
 
 %%----------------------------------------------------------------------

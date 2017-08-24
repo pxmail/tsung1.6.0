@@ -1379,7 +1379,7 @@ analyse_message(singlechat, AttrsData) ->
 	none;
 
 %% "00040__5421__c70862a8-82e3-44bb-98e0-d726eba4243e"
-analyse_message(groupchat, AttrsData) ->
+analyse_message_old(groupchat, AttrsData) ->
 	CMID = fxml:get_attr_s(<<"cmid">>, AttrsData),
 	CMIDStr = binary_to_list(CMID),
 	GroupMemberNumStr = string:left(CMIDStr, 5),
@@ -1391,6 +1391,12 @@ analyse_message(groupchat, AttrsData) ->
 			none
 	end.
 	
+analyse_message(groupchat, AttrsData) ->
+	CMID = fxml:get_attr_s(<<"cmid">>, AttrsData),
+	CMIDStr = binary_to_list(CMID),
+	GroupMemberNumStr = string:left(CMIDStr, 5),
+	{GroupMemberNum, _} = string:to_integer(GroupMemberNumStr),
+	ts_msg_server:update_counter(CMIDStr, GroupMemberNum).
 
 
 %%----------------------------------------------------------------------
