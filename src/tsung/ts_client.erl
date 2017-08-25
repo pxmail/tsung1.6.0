@@ -1355,7 +1355,7 @@ analyse_message(DataBin) ->
 	StrList = unpack(DataStr, []),
 	lists:foreach(fun(StrTmp) ->
 			BinTmp = list_to_binary(StrTmp),
-			case fxml_stream:parse_element(Data) of
+			case fxml_stream:parse_element(BinTmp) of
 		    	#xmlel{name = <<"msg">>, attrs = Attrs} ->
 					case fxml:get_attr_s(<<"chat_type">>, Attrs) of
 						<<"chat">> ->
