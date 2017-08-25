@@ -1347,7 +1347,7 @@ unpack(DataStr, StrList) when length(DataStr) > 200 ->
 unpack(DataStr, StrList) when length(DataStr) == 0 ->
 	StrList;
 unpack(DataStr, StrList) ->
-	?LOGF("receive error data=~p~n", [DataStr], ?ERR),
+	?LOGF("receive error data=~p~n", [DataStr], ?INFO),
 	StrList.
 
 analyse_message(DataBin) ->
