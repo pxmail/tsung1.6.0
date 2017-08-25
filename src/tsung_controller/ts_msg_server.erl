@@ -109,13 +109,13 @@ handle_call({insert_message, CMIDStr, 0, DataTime}, _From, State) ->
 
 %%
 handle_call({update_counter, CMIDStr, GroupMemberNum}, _From, State) ->
-%% 	?LOGF("update_counter CMIDStr=~p~n", [CMIDStr], ?ERR),
-%% 	case ets:update_counter(message, CMIDStr, {2, 1}) of
-%% 		GroupMemberNum ->
-%% 			ets:delete(message, CMIDStr);
-%% 		_ ->
-%% 			none
-%% 	end,
+	?LOGF("update_counter CMIDStr=~p~n", [CMIDStr], ?ERR),
+	case ets:update_counter(message, CMIDStr, {2, 1}) of
+		GroupMemberNum ->
+			ets:delete(message, CMIDStr);
+		_ ->
+			none
+	end,
 	{reply, ok, State};
 
 handle_call(stop, _From, State)->
