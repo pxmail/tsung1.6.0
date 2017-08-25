@@ -554,6 +554,27 @@ start_launchers(Machines) ->
 %%     end,
 %%     post_process_line(io:get_line(Dev, ""),Dev, Logs).
 
+
+%%----------------------------------------------------------------------
+%% Func: im20_dumpmessage/0
+%% 
+%%----------------------------------------------------------------------
+im20_dumpmessage() ->
+	?LOGF("3002 ~n",[],?ERR),
+	LostMessageNum = ets:info(message, size),
+	LostMessageList = 
+		if LostMessageNum > 1000 ->
+				FirstKey = ets:first(message),
+				LostMessageFirst = ets:lookup(message, FirstKey),
+				LastKey = ets:last(message),
+				LostMessageLast = ets:lookup(message, LastKey),
+				lists:append(LostMessageFirst, LostMessageLast);
+		   true ->
+				ets:tab2list(message)
+		end,
+	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
+
+
 %%----------------------------------------------------------------------
 %% Func: im20_dumplog/0
 %% 
@@ -563,6 +584,7 @@ im20_dumplog() ->
 %% 	LostMessageNum = ets:info(message, size),
 %% 	LostMessageList = ets:tab2list(message),
 %% 	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR),
+	im20_dumpmessage(),
 	?LOGF("im20_dump_tokens ~n",[],?ERR),
 	TokenNum = ets:info(tokens, size),
 	TokenList = ets:tab2list(tokens),

@@ -1363,7 +1363,8 @@ analyse_message(DataBin) ->
 						<<"groupchat">> ->
 								analyse_message(groupchat, Attrs);
 						<<"testover">> ->
-								im20_dumpmessage();
+%% 								im20_dumpmessage();
+								none;
 						_ ->
 							none
 					end;
@@ -1424,20 +1425,20 @@ analyse_message_old(groupchat, AttrsData) ->
 %% Func: im20_dumpmessage/0
 %% 
 %%----------------------------------------------------------------------
-im20_dumpmessage() ->
-	?LOGF("3002 ~n",[],?ERR),
-	LostMessageNum = ets:info(message, size),
-	LostMessageList = 
-		if LostMessageNum > 1000 ->
-				FirstKey = ets:first(message),
-				LostMessageFirst = ets:lookup(message, FirstKey),
-				LastKey = ets:last(message),
-				LostMessageLast = ets:lookup(message, LastKey),
-				lists:append(LostMessageFirst, LostMessageLast);
-		   true ->
-				ets:tab2list(message)
-		end,
-	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
+%% im20_dumpmessage() ->
+%% 	?LOGF("3002 ~n",[],?ERR),
+%% 	LostMessageNum = ets:info(message, size),
+%% 	LostMessageList = 
+%% 		if LostMessageNum > 1000 ->
+%% 				FirstKey = ets:first(message),
+%% 				LostMessageFirst = ets:lookup(message, FirstKey),
+%% 				LastKey = ets:last(message),
+%% 				LostMessageLast = ets:lookup(message, LastKey),
+%% 				lists:append(LostMessageFirst, LostMessageLast);
+%% 		   true ->
+%% 				ets:tab2list(message)
+%% 		end,
+%% 	?LOGF("Lost Message List Num=~p~n~p~n", [LostMessageNum, LostMessageList],?ERR).
 
 
 
