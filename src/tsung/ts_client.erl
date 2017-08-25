@@ -1337,22 +1337,43 @@ token_bucket(R,Burst,S0,T0,P1,Now,Sleep) ->
 
 %% <<"<msg chat_type=\"groupchat\" cmid=\"40__c70862a8-82e3-44bb-98e0-d726eba4243e\" from=\"25402\" from_resource=\"Hisuper\" retry=\"2\" smid=\"100427134\" stime=\"1502094654298\" to=\"101729\"><body>40__c70862a8-82e3-44bb-98e0-d726eba4243e</body><circle_id>101729</circle_id><msg_type>chat</msg_type></msg>">>
 %% <msg chat_type="testover" ></msg>
-analyse_message(Data) ->
-    case fxml_stream:parse_element(Data) of
-    	#xmlel{name = <<"msg">>, attrs = Attrs} ->
-			case fxml:get_attr_s(<<"chat_type">>, Attrs) of
-				<<"chat">> ->
-						analyse_message(singlechat, Attrs);
-				<<"groupchat">> ->
-						analyse_message(groupchat, Attrs);
-				<<"testover">> ->
-						im20_dumpmessage();
+
+unpack(DataStr, StrList) when string:len(DataStr) > 200 ->
+	Pos = string:str(DataStr, "</msg>"),
+	NewStr = string:left(DataStr, Len + 5),
+	DataStr2 = string:sub_string(DataStr, Pos + 6),
+	StrList2 = [NewStr|StrList],
+	unpack(DataStr2, StrList2);
+unpack(DataStr, StrList) when string:len(DataStr) == 0 ->
+	StrList;
+unpack(DataStr, StrList) ->
+	?LOGF("receive error data=~p~n", [DataStr], ?ERR),
+	StrList.
+
+analyse_message(DataBin) ->
+	DataStr = binary_to_list(DataBin),
+	StrList = unpack(DataStr, []),
+	lists:foreach(fun(StrTmp) ->
+			BinTmp = list_to_binary(StrTmp),
+			case fxml_stream:parse_element(Data) of
+		    	#xmlel{name = <<"msg">>, attrs = Attrs} ->
+					case fxml:get_attr_s(<<"chat_type">>, Attrs) of
+						<<"chat">> ->
+								analyse_message(singlechat, Attrs);
+						<<"groupchat">> ->
+								analyse_message(groupchat, Attrs);
+						<<"testover">> ->
+								im20_dumpmessage();
+						_ ->
+							none
+					end;
 				_ ->
 					none
-			end;
-		_ ->
-			none
-	end.
+			end
+		end, StrList).
+	
+
+    
 
 %% Token="1a3ba76368ba48d9a885302f9cd047e2"
 %% DecryptPassword="739bb2166"
