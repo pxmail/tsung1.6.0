@@ -1338,13 +1338,13 @@ token_bucket(R,Burst,S0,T0,P1,Now,Sleep) ->
 %% <<"<msg chat_type=\"groupchat\" cmid=\"40__c70862a8-82e3-44bb-98e0-d726eba4243e\" from=\"25402\" from_resource=\"Hisuper\" retry=\"2\" smid=\"100427134\" stime=\"1502094654298\" to=\"101729\"><body>40__c70862a8-82e3-44bb-98e0-d726eba4243e</body><circle_id>101729</circle_id><msg_type>chat</msg_type></msg>">>
 %% <msg chat_type="testover" ></msg>
 
-unpack(DataStr, StrList) when iolist_size(DataStr) > 200 ->
+unpack(DataStr, StrList) when length(DataStr) > 200 ->
 	Pos = string:str(DataStr, "</msg>"),
 	NewStr = string:left(DataStr, Pos + 5),
 	DataStr2 = string:sub_string(DataStr, Pos + 6),
 	StrList2 = [NewStr|StrList],
 	unpack(DataStr2, StrList2);
-unpack(DataStr, StrList) when iolist_size(DataStr) == 0 ->
+unpack(DataStr, StrList) when length(DataStr) == 0 ->
 	StrList;
 unpack(DataStr, StrList) ->
 	?LOGF("receive error data=~p~n", [DataStr], ?ERR),
