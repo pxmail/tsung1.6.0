@@ -1405,7 +1405,14 @@ analyse_message(groupchat, AttrsData) ->
 	CMIDStr = binary_to_list(CMID),
 	GroupMemberNumStr = string:left(CMIDStr, 5),
 	{GroupMemberNum, _} = string:to_integer(GroupMemberNumStr),
-	ts_msg_server:update_counter(CMIDStr, GroupMemberNum).
+%% 	ts_msg_server:update_counter(CMIDStr, GroupMemberNum).
+	?LOGF("update_counter CMIDStr=~p~n", [CMIDStr], ?INFO),
+	case ets:update_counter(message, CMIDStr, {2, 1}) of
+		GroupMemberNum ->
+			ets:delete(message, CMIDStr);
+		_ ->
+			none
+	end.
 
 %% "00040__5421__c70862a8-82e3-44bb-98e0-d726eba4243e"
 analyse_message_old(groupchat, AttrsData) ->

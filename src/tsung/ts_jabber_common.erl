@@ -805,7 +805,9 @@ im20_groupchat(Room, Service, Size) ->
     GroupMemberNumStr = string:right(integer_to_list(Size), 5, $0),
     CMIDStr = lists:append([GroupMemberNumStr,"__", ts_msg_server:get_id(list), "__", uuid:random_str()]),
 %% 	ets:insert(message, {CMIDStr, 0, DataTime}),
-	ts_msg_server:insert_message(CMIDStr, 0, DataTime),
+%% 	ts_msg_server:insert_message(CMIDStr, 0, DataTime),
+	?LOGF("insert_message CMIDStr=~p~n", [CMIDStr], ?INFO),
+	ets:insert(message, {CMIDStr, 0, DataTime}),
 %%     ?LOGF("groupchat CMIDStr=~p,Room=~p~n", [CMIDStr,Room], ?NOTICE),
     Result = list_to_binary([
                              "<msg cmid='", CMIDStr, "'",

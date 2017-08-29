@@ -27,7 +27,7 @@
 -vc('$Id$ ').
 
 -export([get_id/0, get_id/1, reset/0]).
--export([insert_message/3, update_counter/2]).
+%% -export([insert_message/3, update_counter/2]).
 
 -include("ts_macros.hrl").
 
@@ -58,11 +58,11 @@ get_id(list)->
 get_id({_,_DynData}) -> % to use this fun in substitutions
     get_id(list).
 
-insert_message(CMIDStr, 0, DataTime) ->
-	gen_server:call({global, ?MODULE}, {insert_message, CMIDStr, 0, DataTime}).
+%% insert_message(CMIDStr, 0, DataTime) ->
+%% 	gen_server:call({global, ?MODULE}, {insert_message, CMIDStr, 0, DataTime}).
 
-update_counter(CMIDStr, GroupMemberNum) ->
-	 gen_server:call({global, ?MODULE}, {update_counter, CMIDStr, GroupMemberNum}).
+%% update_counter(CMIDStr, GroupMemberNum) ->
+%% 	 gen_server:call({global, ?MODULE}, {update_counter, CMIDStr, GroupMemberNum}).
 
 reset()->
     gen_server:call({global, ?MODULE}, reset).
@@ -102,21 +102,21 @@ handle_call(reset, _From, State) ->
     {reply, ok, State#state{number = 0}};
 
 %%
-handle_call({insert_message, CMIDStr, 0, DataTime}, _From, State) ->
-	?LOGF("insert_message CMIDStr=~p~n", [CMIDStr], ?INFO),
-	ets:insert(message, {CMIDStr, 0, DataTime}),
-	{reply, ok, State};
+%% handle_call({insert_message, CMIDStr, 0, DataTime}, _From, State) ->
+%% 	?LOGF("insert_message CMIDStr=~p~n", [CMIDStr], ?INFO),
+%% 	ets:insert(message, {CMIDStr, 0, DataTime}),
+%% 	{reply, ok, State};
 
 %%
-handle_call({update_counter, CMIDStr, GroupMemberNum}, _From, State) ->
-	?LOGF("update_counter CMIDStr=~p~n", [CMIDStr], ?INFO),
-	case ets:update_counter(message, CMIDStr, {2, 1}) of
-		GroupMemberNum ->
-			ets:delete(message, CMIDStr);
-		_ ->
-			none
-	end,
-	{reply, ok, State};
+%% handle_call({update_counter, CMIDStr, GroupMemberNum}, _From, State) ->
+%% 	?LOGF("update_counter CMIDStr=~p~n", [CMIDStr], ?INFO),
+%% 	case ets:update_counter(message, CMIDStr, {2, 1}) of
+%% 		GroupMemberNum ->
+%% 			ets:delete(message, CMIDStr);
+%% 		_ ->
+%% 			none
+%% 	end,
+%% 	{reply, ok, State};
 
 handle_call(stop, _From, State)->
     {stop, normal, ok, State}.
