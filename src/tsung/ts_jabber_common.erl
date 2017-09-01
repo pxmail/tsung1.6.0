@@ -807,7 +807,7 @@ im20_groupchat(Room, Service, Size) ->
 %% 	ets:insert(message, {CMIDStr, 0, DataTime}),
 %% 	ts_msg_server:insert_message(CMIDStr, 0, DataTime),
 	?LOGF("insert_message CMIDStr=~p~n", [CMIDStr], ?INFO),
-	ets:insert(message, {CMIDStr, 0, DataTime}),
+%%	ets:insert(message, {CMIDStr, 0, DataTime}),
 %%     ?LOGF("groupchat CMIDStr=~p,Room=~p~n", [CMIDStr,Room], ?NOTICE),
     Result = list_to_binary([
                              "<msg cmid='", CMIDStr, "'",
