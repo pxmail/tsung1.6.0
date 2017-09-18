@@ -65,7 +65,7 @@
          connect_timeout  = infinity,   % timeout for gen_tcp:connect/4 (infinity OR time in milliseconds)
          global_ack_timeout = infinity, % timeout for global ack
          tcp_rcv_size  = 32768,     % tcp buffers size
-         tcp_snd_size  = 32768,
+         tcp_snd_size  = 8192,
          udp_rcv_size,              % udp buffers size
          udp_snd_size,
          certificate = [],          % for ssl
