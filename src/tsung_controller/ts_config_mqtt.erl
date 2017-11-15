@@ -43,6 +43,8 @@
 %%----------------------------------------------------------------------
 %% Parsing other elements
 parse_config(Element = #xmlElement{name = dyn_variable}, Conf = #config{}) ->
+
+
     ts_config:parse(Element, Conf);
 parse_config(Element = #xmlElement{name = mqtt},
              Config = #config{curid = Id, session_tab = Tab,
